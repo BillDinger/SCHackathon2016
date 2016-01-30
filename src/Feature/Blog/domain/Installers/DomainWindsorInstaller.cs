@@ -3,6 +3,7 @@
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using Sitecore.Feature.Blog.CMS.Log;
     using Sitecore.Feature.Blog.Domain.Repositories;
 
     public class DomainWindsorInstaller : IWindsorInstaller

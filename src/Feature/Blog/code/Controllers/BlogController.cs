@@ -58,6 +58,7 @@
             }
 
             // 2.) get our rendering parameters
+            int itemsToDisplay = 10;
             var parameters = RenderingContext.GetRenderingParameters<IBlogRenderingParameters>();
             int returnCount = ItemsToDisplay;
             if (parameters != null)
@@ -75,7 +76,16 @@
 
         public ActionResult BlogDetail()
         {
-            throw new NotImplementedException();
+            var detailSource = RenderingContext.DataSource;
+            if (!String.IsNullOrEmpty(detailSource))
+            {
+                var blogDetail = Context.GetItem<IBlogDetail>(detailSource);
+                return View(blogDetail);
+            }
+            else
+            {
+                return Content("No datasource set");
+            }
         }
     }
 }
