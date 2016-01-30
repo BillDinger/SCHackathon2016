@@ -17,9 +17,10 @@
             get { return Context.Language.Name; }
         }
 
-        public SiteContext Site
+
+        public string SiteStartPath
         {
-            get { return Context.Site; }
+            get { return Context.Site.StartPath; }
         }
     }
 }

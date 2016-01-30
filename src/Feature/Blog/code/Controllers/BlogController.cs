@@ -5,6 +5,7 @@
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
     using Sitecore.Feature.Blog.Controllers.Exceptions;
+    using Sitecore.Feature.Blog.Domain.Repositories;
     using Sitecore.Feature.Blog.Domain.Templates;
     using Sitecore.Feature.Blog.Factories;
     using Sitecore.Feature.Blog.Factories.Exceptions;
@@ -22,11 +23,13 @@
             BlogFactory = blogFactory;
         }
 
-        private IContext Context { get; set; }
+        private IContext Context { get; }
 
-        private IRenderingContext RenderingContext { get; set; }
+        private IRenderingContext RenderingContext { get; }
 
         private ILogger Logger { get; set; }
+
+        private IBlogRepository Repository { get; }
 
         public BlogController()
         {
@@ -37,6 +40,7 @@
             Context = BlogFactory.Create<IContext>();
             RenderingContext = BlogFactory.Create<IRenderingContext>();
             Logger = BlogFactory.Create<ILogger>();
+            Repository = BlogFactory.Create<IBlogRepository>();
         }
 
 
@@ -56,11 +60,11 @@
                 throw new RenderingParametersNotFoundException("No rendering parameters found for the item!");
             }
 
-            // 3.) Create our view.
+            // 3.) query for our items.
+            var items = Repository.GetBlogDetails(parameters.ItemsToDisplay, listing.DisplayedCategories, listing.StartItem);
 
-            // 4.) Return our controller.
-
-            throw new NotImplementedException();
+            // 4.) Return our view
+            return View("BlogListing", items);
         }
 
         public ActionResult BlogDetail()

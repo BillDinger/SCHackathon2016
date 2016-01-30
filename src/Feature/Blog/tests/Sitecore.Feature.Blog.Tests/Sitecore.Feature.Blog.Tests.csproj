@@ -76,6 +76,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\BlogControllerTests.cs" />
+    <Compile Include="Factories\DefaultBlogFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

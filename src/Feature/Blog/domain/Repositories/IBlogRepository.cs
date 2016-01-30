@@ -7,5 +7,7 @@
     {
         IList<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
             ISitecoreItem startItem);
+
+        IList<IBlogDetail> GetBlogDetailsByScore(int count);
     }
 }

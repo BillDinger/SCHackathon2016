@@ -78,13 +78,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Contexts\DefaultContextTests.cs" />
-    <Compile Include="Factories\DefaultBlogFactoryTests.cs" />
     <Compile Include="Logger\DefaultLoggerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="App_Config\FieldTypes.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
