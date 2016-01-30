@@ -4,7 +4,7 @@
     using Castle.MicroKernel;
     using Sitecore.Feature.Blog.Factories.Exceptions;
 
-    public class DefaultBlogFactory : IBlogFactory
+    public class DefaultBlogFactory : IBlogFactory, IDisposable
     {
         private static IKernel Kernel { get; set; }
 
@@ -13,11 +13,11 @@
             return Kernel.Resolve<T>();
         }
 
-        void IBlogFactory.Initialize(IKernel kernel)
+        public void Initialize(IKernel kernel)
         {
             if (kernel == null)
             {
-                throw new ArgumentNullException("kernel");
+                throw new ArgumentNullException(nameof(kernel));
             }
 
             if (Kernel != null)
@@ -26,6 +26,23 @@
             }
 
             Kernel = kernel;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (Kernel != null)
+                {
+                    Kernel.Dispose();
+                    Kernel = null;
+                }
+            }
         }
     }
 }
