@@ -45,7 +45,11 @@
                 // TODO throw exception!
             }
 
-            // 2.) 
+            // 2.) get our rendering parameters
+
+            // 3.) Create our view.
+
+            // 4.) Return our controller.
 
             throw new NotImplementedException();
         }

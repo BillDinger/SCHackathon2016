@@ -1,34 +1,27 @@
 ﻿namespace Sitecore.Feature.Blog.CMS.Contexts
 {
-    using System;
-    using Sitecore.Feature.Blog.CMS.Log;
+    using Glass.Mapper.Sc;
     using Sitecore.Mvc.Presentation;
 
     public class DefaultRenderingContext : IRenderingContext
     {
-        private readonly ILogger _logger;
-        private ILogger Logger { get { return _logger; } }
 
-        public DefaultRenderingContext(ILogger logger)
-        {
-            if (logger == null)
-            {
-                throw new ArgumentNullException("logger");
-            }
-            _logger = logger;
-        }
         public string DataSource { get { return RenderingContext.Current.Rendering.DataSource; } }
 
         public T GetRenderingParameters<T>() where T : class
         {
-            // 1.) Attempt to Resplve our current rendering parameters
+            // 1.) Attempt to Resolve our current rendering parameters
             string renderingParams = RenderingContext.CurrentOrNull.Rendering["Parameters"];
             if (string.IsNullOrEmpty(renderingParams))
             {
-                Logger.Warn("Unable to resolve the rendering context parameters for the item {0}", this);
-                return null;
+                return default(T);
             }
-            throw new NotImplementedException();
+
+            // 2.) create a new glass context
+            var glassHtml = new GlassHtml(new SitecoreContext());
+
+            // 3.) Return our rendering parameters
+            return glassHtml.GetRenderingParameters<T>(RenderingContext.Current.Rendering.Parameters.ToString());
         }
     }
 }
