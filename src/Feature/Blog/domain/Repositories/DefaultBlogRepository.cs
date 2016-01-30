@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Feature.Blog.Domain.Repositories
 {
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
     using Sitecore.Feature.Blog.CMS.Contexts;
@@ -9,6 +10,9 @@
 
     public class DefaultBlogRepository : IBlogRepository
     {
+
+
+
         private ILogger Logger { get; }
         private IContext Context { get; }
 
@@ -26,6 +30,7 @@
             Logger = logger;
             Context = context;
         }
+
         public IList<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
             ISitecoreItem startItem)
         {
@@ -40,30 +45,42 @@
                 throw new ArgumentNullException(nameof(startItem));
             }
 
-            // 2.) Create our Sitecore Fast query to pull all templates. For speed we pull relative to the
-            // start item the user specifies
-            var query = string.Format("fast:{0}//**[@@id='{1}']//*[@@templateid='{2}']", Context.SiteStartPath,
-                startItem.Id, DataTemplateIds.BlogDetail.ToUpper());
+            //// 2.) Create our Sitecore Fast query to pull all our blog posts.
+            //var query = string.Format("fast:{0}//*[@@id='{1}']//*[@@templateid='{2}']", Context.SiteStartPath,
+            //    startItem.Id, DataTemplateIds.BlogDetail.ToUpper());
+            //Logger.Debug(string.Format("Running the query {0}", query), this);
+
+            // 1.) We need every blog that has that tag associated with it. Tags are stored as GUIDs like this in
+            // the categories field == {imaguid} | {imanotherguid} | {moreguidsss} so we do a gigantic
+            // like query depending on how many tags we get in.
+            var sb = new System.Text.StringBuilder();
+            foreach (var category in categories)
+            {
+                var first = categories.FirstOrDefault();
+                if (category == first)
+                {
+                    sb.Append($"@Categories='%{category.Id.ToString("B")}%'");
+                }
+                else
+                {
+                    sb.Append($" or @Categories='%{category.Id.ToString("B")}%'");
+                }
+            }
+
+            // 2.) Query relative to the start item
+            var query = string.Format("fast:{0}//*[@@id='{1}']//*[@@templateid='{2}' and ({3})]", Context.SiteStartPath,
+                startItem.Id, DataTemplateIds.BlogDetail.ToUpper(), sb.ToString());
             Logger.Debug(string.Format("Running the query {0}", query), this);
 
-            // 3.) Query our context
+
+            // 3.) Query our context with our query
             var items = Context.Query<IBlogDetail>(query).Take(count).OrderBy(x => x.BlogDetailDate).ToList();
             Logger.Debug(string.Format("Found {0} items for our query {1}, returning {2}",
                 items.Count(), query, count), this);
 
-            // 4.) For each item, pull its category name and see if it exists in our list of categories.
-            Logger.Debug("Filtering by blog categories.", this);
-            var results = new List<IBlogDetail>();
-            var categoryList = categories.ToList();
-            foreach (var item in items)
-            {
-                var tags = item.Category;
-                results.AddRange(from tag in tags
-                    where categoryList.Any(x => x.CategoryName.Equals(tag.CategoryName))
-                    select item);
-            }
+            // 4.) Return
+            return items;
 
-            return results;
         }
 
         public IList<IBlogDetail> GetBlogDetailsByScore(int count)
