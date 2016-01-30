@@ -146,6 +146,8 @@
     </Compile>
     <Compile Include="Installers\BlogWindsorInstaller.cs" />
     <Compile Include="Installers\WindsorControllerFactory.cs" />
+    <Compile Include="Models\BlogListingModel.cs" />
+    <Compile Include="Models\BlogSummaryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +160,7 @@
       <Name>Sitecore.Feature.Blog.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
