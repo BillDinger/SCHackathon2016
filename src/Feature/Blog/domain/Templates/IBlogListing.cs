@@ -2,10 +2,13 @@
 
 namespace Sitecore.Feature.Blog.Domain.Templates
 {
-    [SitecoreType(TemplateId=DataTemplateIds.BlogListing, AutoMap = true)]
-    public interface IBlogListing
+    using System.Collections.Generic;
+
+    [SitecoreType(TemplateId = DataTemplateIds.BlogListing, AutoMap = true)]
+    public interface IBlogListing : ISitecoreItem
     {
-        string DisplayedCategories { get; set; }
+        IEnumerable<IBlogCategory> DisplayedCategories { get; set; }
         string BlogListingTitle { get; set; }
+
     }
 }

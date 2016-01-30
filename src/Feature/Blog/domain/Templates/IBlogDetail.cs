@@ -5,7 +5,7 @@ using System;
 namespace Sitecore.Feature.Blog.Domain.Templates
 {
     [SitecoreType(TemplateId = DataTemplateIds.BlogDetail, AutoMap = true)]
-    public interface IBlogDetail
+    public interface IBlogDetail : ISitecoreItem
     {
         DateTime BlogDetailDate { get; set; }
         string BlogDetailTitle { get; set; }
