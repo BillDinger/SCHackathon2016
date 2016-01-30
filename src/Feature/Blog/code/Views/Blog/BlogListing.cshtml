@@ -162,7 +162,6 @@
 {
     @Html.Glass().Editable(blog, x => x.BlogDetailBody);
 
-<!-- Landon HTML -->
 <div class="article body col-sm-12 col-md-9">
     <a href="#" class="scBlog__wrapper">
         <div class="scBlog__header">
@@ -187,27 +186,15 @@
 <div class="col-sm-12 col-md-3">
     <div id="scBlogTags">
         <ul>
-            <li class="scBlogTag1"><a href="#">Lorem ipsum</a></li>
-            <li class="scBlogTag2"><a href="#">Dolor sit amet</a></li>
-            <li class="scBlogTag3"><a href="#">Consectetur adipiscing elit</a></li>
-            <li class="scBlogTag2"><a href="#">Proin </a></li>
-            <li class="scBlogTag4"><a href="#">Sagittis libero</a></li>
-            <li class="scBlogTag1"><a href="#">Aliquet augue</a></li>
-            <li class="scBlogTag1"><a href="#">Quisque dui lacus</a></li>
-            <li class="scBlogTag5"><a href="#">Consequat</a></li>
-            <li class="scBlogTag2"><a href="#">Dictum non</a></li>
-            <li class="scBlogTag1"><a href="#">Venenatis et tortor</a></li>
-            <li class="scBlogTag3"><a href="#">Suspendisse mauris</a></li>
-            <li class="scBlogTag4"><a href="#">In accumsan </a></li>
-            <li class="scBlogTag1"><a href="#">Egestas neque</a></li>
-            <li class="scBlogTag5"><a href="#">Mauris eget felis</a></li>
-            <li class="scBlogTag1"><a href="#">Suspendisse</a></li>
-            <li class="scBlogTag2"><a href="#">condimentum eleifend nulla</a></li>
+            @foreach (var tag in blog.Category)
+            { 
+            <li class="scBlogTag1"><a href="#">@tag.CategoryName</a></li>
+}
+            
         </ul>
     </div>
     <a class="btn" onclick="$('#scBlogTags ul').hide().addClass('alt').fadeIn('fast');">Tag View 1</a>
     <a class="btn" onclick="$('#scBlogTags ul').hide().removeClass('alt').fadeIn('fast');">Tag View 2</a>
 </div>
-    <!-- Landon HTML -->
 }
 

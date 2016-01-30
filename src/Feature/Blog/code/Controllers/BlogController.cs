@@ -60,7 +60,6 @@
             }
 
             // 2.) get our rendering parameters
-            int itemsToDisplay = 10;
             var parameters = RenderingContext.GetRenderingParameters<IBlogRenderingParameters>();
             int returnCount = ItemsToDisplay;
             if (parameters != null)
