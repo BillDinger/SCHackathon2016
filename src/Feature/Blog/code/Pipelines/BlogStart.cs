@@ -6,7 +6,7 @@
     using Domain.Installers;
     using Installers;
     using Factories;
-    using Sitecore.Feature.Blog.Controllers;
+    using Controllers;
     using Sitecore.Pipelines;
 
     public class BlogStart

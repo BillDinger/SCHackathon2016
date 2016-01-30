@@ -141,8 +141,11 @@
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\Exceptions\NoBlogListingFoundException.cs" />
+    <Compile Include="Controllers\Exceptions\RenderingParametersNotFoundException.cs" />
     <Compile Include="Factories\DefaultBlogFactory.cs" />
     <Compile Include="Factories\Exceptions\ContainerAlreadyInitializedException.cs" />
+    <Compile Include="Factories\Exceptions\ContainerNotFoundException.cs" />
     <Compile Include="Factories\IBlogFactory.cs" />
     <Compile Include="Installers\BlogWindsorInstaller.cs" />
     <Compile Include="Models\BlogListingModel.cs" />
