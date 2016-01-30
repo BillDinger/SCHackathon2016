@@ -1,9 +1,9 @@
 ﻿namespace Sitecore.Feature.Blog.Domain.Repositories
 {
     using System;
-    using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Linq;
+    using Sitecore.Feature.Blog.CMS.Analytics;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
     using Sitecore.Feature.Blog.Domain.Templates;
@@ -11,20 +11,22 @@
     public class DefaultBlogRepository : IBlogRepository
     {
 
-
-
         private ILogger Logger { get; }
         private IContext Context { get; }
 
-        public DefaultBlogRepository(ILogger logger, IContext context)
+        public DefaultBlogRepository(ILogger logger, IContext context, IAnalyticsService analyticsService)
         {
             if (logger == null)
             {
-                throw new ArgumentNullException("logger");
+                throw new ArgumentNullException(nameof(logger));
             }
             if (context == null)
             {
-                throw new ArgumentNullException("context");
+                throw new ArgumentNullException(nameof(context));
+            }
+            if (analyticsService == null)
+            {
+                throw new ArgumentNullException(nameof(analyticsService));
             }
 
             Logger = logger;
@@ -37,7 +39,7 @@
         /// </summary>
         /// <param name="count">Number of parameters</param>
         /// <param name="categories">Categories to search on</param>
-        /// <param name="startItem">Relative path to serach to limit our hit on the database</param>
+        /// <param name="startItem">Relative path to search to limit our hit on the database</param>
         /// <returns></returns>
         public IList<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
             ISitecoreItem startItem)
@@ -57,12 +59,16 @@
             // the categories field == {imaguid} | {imanotherguid} | {moreguidsss} so we do a gigantic
             // like query depending on how many tags we get in.
             var sb = new System.Text.StringBuilder();
-            foreach (var category in categories)
+            var performantCategories = categories.ToList();
+            foreach (var category in performantCategories)
             {
-                var first = categories.FirstOrDefault();
+                var first = performantCategories.FirstOrDefault();
                 if (category == first)
                 {
-                    sb.Append($"@Category='%{category.Id.ToString("B")}%'");
+                    if (category != null)
+                    {
+                        sb.Append($"@Category='%{category.Id.ToString("B")}%'");
+                    }
                 }
                 else
                 {
@@ -88,8 +94,8 @@
 
         public IList<IBlogDetail> GetBlogDetailsByScore(int count)
         {
-            // 1.) retrieve from our analytics provider the top scored
-
+            // 1.) retrieve from our analytics provider the names of hte top scored items.
+            //var tagNames
             throw new NotImplementedException();
         }
     }
