@@ -49,5 +49,10 @@
            
             throw new NotImplementedException();
         }
+
+        public ActionResult BlogDetail()
+        {
+
+        }
     }
 }
