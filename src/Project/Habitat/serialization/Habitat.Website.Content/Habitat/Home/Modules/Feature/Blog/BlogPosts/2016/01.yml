@@ -1,0 +1,14 @@
+﻿---
+ID: 38b20449-1d28-4533-bf55-220db53449ca
+Parent: 11c3a327-fc51-4033-8fbd-63495a62cd3a
+Template: adb6ca4f-03ef-4f47-b9ac-9ce2ba53ff97
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/BlogPosts/2016/01
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T140546Z
