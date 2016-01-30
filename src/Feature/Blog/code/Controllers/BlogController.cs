@@ -30,25 +30,6 @@
 
         }
 
-        //public BlogController(IContext context, IRenderingContext renderingContex, ILogger logger) 
-        //{
-        //    if (context == null)
-        //    {
-        //        throw new ArgumentNullException("context");
-        //    }
-        //    if (renderingContex == null)
-        //    {
-        //        throw new ArgumentNullException("renderingContex");
-        //    }
-        //    if (logger == null)
-        //    {
-        //        throw new ArgumentNullException("logger");
-        //    }
-        //    _logger = logger;
-        //    _context = context;
-        //    _renderingContext = renderingContex;
-        //}
-
         public ActionResult BlogListing()
         {
             // 1.) Retrieve our current item from our context.
