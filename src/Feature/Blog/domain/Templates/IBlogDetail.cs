@@ -4,6 +4,8 @@ using System;
 
 namespace Sitecore.Feature.Blog.Domain.Templates
 {
+    using System.Collections.Generic;
+
     [SitecoreType(TemplateId = DataTemplateIds.BlogDetail, AutoMap = true)]
     public interface IBlogDetail : ISitecoreItem
     {
@@ -12,6 +14,6 @@ namespace Sitecore.Feature.Blog.Domain.Templates
         string BlogDetailAbstract { get; set; }
         string BlogDetailBody { get; set; }
         Image BlogDetailImage { get; set; }
-        IBlogCategory Category { get; set; }
+        IEnumerable<IBlogCategory> Category { get; set; }
     }
 }
