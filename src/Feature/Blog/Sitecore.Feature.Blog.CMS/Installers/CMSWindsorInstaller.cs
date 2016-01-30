@@ -4,6 +4,7 @@
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
     using Log;
+    using Contexts;
 
     public class CmsWindsorInstaller : IWindsorInstaller
     {
@@ -11,6 +12,12 @@
         {
             container.Register(Component.For<ILogger>()
                 .ImplementedBy(typeof(DefaultLogger))
+                .LifestyleSingleton(),
+                Component.For<IContext>()
+                .ImplementedBy(typeof(DefaultContext))
+                .LifestyleSingleton(),
+                Component.For<IRenderingContext>()
+                .ImplementedBy(typeof(DefaultRenderingContext))
                 .LifestyleSingleton(),
                 Classes.FromThisAssembly()
                   .InNamespace("Sitecore.Feature.Blog.CMS", true)

@@ -1,11 +1,11 @@
 ﻿namespace Sitecore.Feature.Blog.CMS.Tests.Contexts
 {
+    using System;
     using Glass.Mapper.IoC;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using Sitecore.Data.Managers;
-    using Sitecore.Feature.Blog.App_Start;
-    using Sitecore.Feature.Blog.CMS.Contexts;
+    using App_Start;
+    using CMS.Contexts;
 
     [TestClass]
     public class DefaultContextTests
@@ -20,6 +20,7 @@
             // start Glass.Mapper.
             GlassMapperSc.Start();
         }
+
         [TestMethod]
         public void Language_Void_ContextLanguageName()
         {
@@ -31,6 +32,14 @@
 
             // assert.
             Assert.AreEqual("en", language);
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            // wipe our context.
+            Glass.Mapper.Context.Contexts.Clear();
+            Sitecore.Context.SetActiveSite("website");
         }
 
     }
