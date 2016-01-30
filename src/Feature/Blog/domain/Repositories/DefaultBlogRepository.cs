@@ -120,12 +120,13 @@
 
                 // 3.) If we're over our query return list, yes I should perform this ahead of time but we're
                 // like a few minutes from deadline!
-                if (queryResult.Count() > count)
+                if (returnList.Count > count)
                 {
-                    return queryResult.Take(count).ToList();
+                    return returnList.Take(count).ToList();
                 }
 
             }
+            return returnList.ToList();
         }
     }
 }
