@@ -51,13 +51,25 @@
             Logger.Debug(string.Format("Found {0} items for our query {1}, returning {2}",
                 items.Count(), query, count), this);
 
-            return items;
+            // 4.) For each item, pull its category name and see if it exists in our list of categories.
+            Logger.Debug("Filtering by blog categories.", this);
+            var results = new List<IBlogDetail>();
+            var categoryList = categories.ToList();
+            foreach (var item in items)
+            {
+                if (categoryList.Any(x => x.CategoryName.Equals(item.Category.CategoryName)))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
         }
 
         public IList<IBlogDetail> GetBlogDetailsByScore(int count)
         {
             // 1.) retrieve from our analytics provider the top scored
-            
+
             throw new NotImplementedException();
         }
     }
