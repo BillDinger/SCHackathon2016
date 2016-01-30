@@ -1,11 +1,11 @@
 ﻿namespace Sitecore.Feature.Blog.Controllers
 {
     using System;
+    using System.Linq;
     using System.Web.Mvc;
     using Sitecore.Feature.Blog.CMS;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
-    using Sitecore.Feature.Blog.Controllers.Exceptions;
     using Sitecore.Feature.Blog.Domain.Repositories;
     using Sitecore.Feature.Blog.Domain.Templates;
     using Sitecore.Feature.Blog.Factories;
@@ -54,7 +54,9 @@
             var listing = Context.GetItem<IBlogListing>(RenderingContext.DataSource);
             if (listing == null)
             {
-                throw new NoBlogListingFoundException("No blog listing found attached to the current item.");
+                Logger.Debug("No listings found, returning empty list.", this);
+                return View("BlogListing", Enumerable.Empty<IBlogDetail>().ToList());
+
             }
 
             // 2.) get our rendering parameters
