@@ -8,6 +8,10 @@
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
+            container.Register(Classes.FromThisAssembly()
+  .InNamespace("Sitecore.Feature.Blog", true)
+  .WithServiceDefaultInterfaces()
+  .LifestyleTransient());
         }
     }
 }
