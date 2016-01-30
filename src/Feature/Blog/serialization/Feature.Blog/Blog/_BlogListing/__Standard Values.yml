@@ -4,6 +4,10 @@ Parent: db981d66-7ba8-48bf-9917-753827a8321f
 Template: db981d66-7ba8-48bf-9917-753827a8321f
 Path: /sitecore/templates/Feature/Blog/_BlogListing/__Standard Values
 DB: master
+SharedFields:
+- ID: c9283d9e-7c29-4419-9c28-5a5c8ff53e84
+  Hint: __Bucketable
+  Value: 1
 Languages:
 - Language: en
   Versions:
