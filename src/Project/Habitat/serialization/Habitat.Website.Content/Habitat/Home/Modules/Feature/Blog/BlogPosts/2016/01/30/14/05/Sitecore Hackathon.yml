@@ -49,9 +49,8 @@ Languages:
       Hint: Category
       Type: Multilist with Search
       Value: |
-        {A416F999-EC47-49F2-A7D8-4480A01AF409}
-        {1D770907-A0A6-4B01-820C-A20B463168B4}
         {F3A37BA7-4DA1-4988-AAE6-DA185F3AD648}
+        {1D770907-A0A6-4B01-820C-A20B463168B4}
     - ID: 9e070870-a893-4ee1-9de3-4fd2b24ab5a0
       Hint: BlogDetailTitle
       Value: Sitecore Hackathon

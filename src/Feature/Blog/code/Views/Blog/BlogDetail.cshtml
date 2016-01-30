@@ -156,29 +156,22 @@
 <!-- Landon HTML -->
 <div class="article body col-sm-12 col-md-9">
     <div class="scBlog__header">
-        <h1>Blog Post Header</h1>
+        <h1>@Html.Glass().Editable(Model, x => x.BlogDetailTitle)</h1>
     </div>
     <div class="scBlog__body">
         <div class="scBlog__imageContainer">
             <img class="img-responsive" src="http://placehold.it/650x150">
             <div class="scBlog__dateBlock">
-                <div class="scBlog__dateYear">2014 SEP</div>
-                <div class="scBlog__dateDay">24</div>
+                <div class="scBlog__dateYear">@Html.Glass().Editable(Model, x => x.BlogDetailDate.ToString("yyyy MMM"))</div>
+                <div class="scBlog__dateDay">@Html.Glass().Editable(Model, x => x.BlogDetailDate.ToString("dd"))</div>
             </div>
         </div>
-        <h2>Another Header</h2>
-        <p>
-            Lucas ipsum dolor sit amet darth lobot lando cade darth biggs luke ben darth watto. Jinn maul secura k-3po solo darth. Ventress ben owen mustafar moff moff solo palpatine. Greedo mustafar c-3po jade cade boba calrissian lobot skywalker. Maul greedo jango mon moff solo kessel yoda boba. Moff fett antilles dantooine jango wedge mothma mon vader. Aayla moff gamorrean dooku windu moff ventress jango. Antilles darth jinn utapau sidious. Sebulba lando hutt kessel darth ben. Hutt alderaan moff mandalorians.
-        </p>
-        <p>
-            Sebulba biggs grievous lars organa jabba twi'lek. Dagobah skywalker maul kenobi kit moff moff. Hutt luuke binks coruscant lobot solo darth. Boba fett chewbacca lars yoda gonk. Tatooine wookiee skywalker yoda mace jango. Hoth tatooine hoth palpatine yoda. Moff organa hutt gonk ackbar mandalorians darth. Kenobi skywalker darth endor thrawn skywalker solo. R2-d2 luke leia darth jabba antilles amidala. Gamorrean ewok chewbacca calamari baba jango skywalker anakin. Naboo solo skywalker skywalker tatooine hoth moff.
-        </p>
+        <h2>@Html.Glass().Editable(Model, x => x.BlogDetailAbstract)</h2>
+        <p>@Html.Glass().Editable(Model, x => x.BlogDetailBody)</p>
     </div>
     <div class="scBlog__footer">
         <div class="scBlog__meta">
-            <span>Author: <a href="#">Landon Cline</a></span>
-            <span> / </span>
-            <a href="#"><span>0 Comments</span></a>
+            <span>0 Comments</span>
         </div>
         <div>
             <a href="#" class="pull-left"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>Back to All Posts</a>
@@ -189,42 +182,14 @@
 <div class="col-sm-12 col-md-3">
     <div id="scBlogTags">
         <ul>
-            <li class="scBlogTag1"><a href="#">Lorem ipsum</a></li>
-            <li class="scBlogTag2"><a href="#">Dolor sit amet</a></li>
-            <li class="scBlogTag3"><a href="#">Consectetur adipiscing elit</a></li>
-            <li class="scBlogTag2"><a href="#">Proin </a></li>
-            <li class="scBlogTag4"><a href="#">Sagittis libero</a></li>
-            <li class="scBlogTag1"><a href="#">Aliquet augue</a></li>
-            <li class="scBlogTag1"><a href="#">Quisque dui lacus</a></li>
-            <li class="scBlogTag5"><a href="#">Consequat</a></li>
-            <li class="scBlogTag2"><a href="#">Dictum non</a></li>
-            <li class="scBlogTag1"><a href="#">Venenatis et tortor</a></li>
-            <li class="scBlogTag3"><a href="#">Suspendisse mauris</a></li>
-            <li class="scBlogTag4"><a href="#">In accumsan </a></li>
-            <li class="scBlogTag1"><a href="#">Egestas neque</a></li>
-            <li class="scBlogTag5"><a href="#">Mauris eget felis</a></li>
-            <li class="scBlogTag1"><a href="#">Suspendisse</a></li>
-            <li class="scBlogTag2"><a href="#">condimentum eleifend nulla</a></li>
+            @foreach (var tag in Model.Category)
+            {
+                <li class="scBlogTag1"><a href="#">@tag.CategoryName</a></li>
+            }
         </ul>
     </div>
     <a class="btn" onclick="$('#scBlogTags ul').hide().addClass('alt').fadeIn('fast');">Tag View 1</a>
     <a class="btn" onclick="$('#scBlogTags ul').hide().removeClass('alt').fadeIn('fast');">Tag View 2</a>
 </div>
 <!-- Landon HTML -->
-
-@*<div class="news">
-    <h2>
-        @Html.Glass().Editable(Model, x => x.BlogDetailTitle)
-    </h2>
-
-    <div class="well">
-        <span class="text-muted">
-          @Html.Glass().Editable(Model, x => x.BlogDetailDate)
-    </span>
-    </div>
-    @Html.Glass().Editable(Model, x => x.BlogDetailImage)
-    <div class="body">
-        @Html.Glass().Editable(Model, x => x.BlogDetailBody)
-    </div>
-</div>*@
 
