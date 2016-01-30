@@ -45,6 +45,13 @@ Languages:
         Nullam condimentum suscipit ex id vehicula. Quisque lobortis nunc arcu, egestas molestie magna dictum id. Donec ornare ex odio, nec pharetra urna porta in. Sed nisl ante, laoreet vel turpis ut, sollicitudin blandit risus. Nulla rhoncus pellentesque consequat. Nulla leo arcu, fermentum eu mauris nec, cursus ultrices tellus. Proin a mauris egestas, sodales metus at, bibendum felis.
         
         Suspendisse sollicitudin, velit tempus interdum dictum, elit tellus facilisis erat, elementum pellentesque nisi sem eget dolor. Aliquam augue lectus, molestie in risus non, euismod hendrerit lacus. Nulla nec euismod nunc. Sed auctor ac odio non mattis. Morbi auctor odio ac maximus viverra. Aliquam tincidunt nunc in risus tincidunt malesuada. Donec ultricies eros ligula. Phasellus posuere libero eget justo malesuada, ac tincidunt tortor dapibus. Praesent in porta dui. Curabitur sit amet massa lectus. Etiam non elit maximus, egestas libero ac, scelerisque arcu. Sed eu ligula sagittis, euismod nisl ac, pellentesque erat. Nunc dignissim metus vel risus vulputate convallis. Proin sit amet enim dolor. Pellentesque eget mi arcu.
+    - ID: 81199c7d-77e6-4f9a-bd57-ada48eb49d0d
+      Hint: Category
+      Type: Multilist with Search
+      Value: |
+        {A416F999-EC47-49F2-A7D8-4480A01AF409}
+        {1D770907-A0A6-4B01-820C-A20B463168B4}
+        {F3A37BA7-4DA1-4988-AAE6-DA185F3AD648}
     - ID: 9e070870-a893-4ee1-9de3-4fd2b24ab5a0
       Hint: BlogDetailTitle
       Value: Sitecore Hackathon

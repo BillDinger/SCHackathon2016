@@ -31,6 +31,14 @@
             Context = context;
         }
 
+        /// <summary>
+        /// NOTE: Performant heavy. Will require refactor to use solr or lucene search indexes and/or caching of data
+        /// under high load
+        /// </summary>
+        /// <param name="count">Number of parameters</param>
+        /// <param name="categories">Categories to search on</param>
+        /// <param name="startItem">Relative path to serach to limit our hit on the database</param>
+        /// <returns></returns>
         public IList<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
             ISitecoreItem startItem)
         {
@@ -45,11 +53,6 @@
                 throw new ArgumentNullException(nameof(startItem));
             }
 
-            //// 2.) Create our Sitecore Fast query to pull all our blog posts.
-            //var query = string.Format("fast:{0}//*[@@id='{1}']//*[@@templateid='{2}']", Context.SiteStartPath,
-            //    startItem.Id, DataTemplateIds.BlogDetail.ToUpper());
-            //Logger.Debug(string.Format("Running the query {0}", query), this);
-
             // 1.) We need every blog that has that tag associated with it. Tags are stored as GUIDs like this in
             // the categories field == {imaguid} | {imanotherguid} | {moreguidsss} so we do a gigantic
             // like query depending on how many tags we get in.
@@ -59,11 +62,11 @@
                 var first = categories.FirstOrDefault();
                 if (category == first)
                 {
-                    sb.Append($"@Categories='%{category.Id.ToString("B")}%'");
+                    sb.Append($"@Category='%{category.Id.ToString("B")}%'");
                 }
                 else
                 {
-                    sb.Append($" or @Categories='%{category.Id.ToString("B")}%'");
+                    sb.Append($" or @Category='%{category.Id.ToString("B")}%'");
                 }
             }
 
