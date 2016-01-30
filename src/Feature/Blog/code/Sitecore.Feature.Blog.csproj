@@ -148,8 +148,6 @@
     <Compile Include="Factories\Exceptions\ContainerNotFoundException.cs" />
     <Compile Include="Factories\IBlogFactory.cs" />
     <Compile Include="Installers\BlogWindsorInstaller.cs" />
-    <Compile Include="Models\BlogListingModel.cs" />
-    <Compile Include="Models\BlogSummaryModel.cs" />
     <Compile Include="Pipelines\BlogStart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
