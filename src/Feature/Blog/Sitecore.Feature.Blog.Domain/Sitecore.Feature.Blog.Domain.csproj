@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Installers\DomainWindsorInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\DataTemplateIds.cs" />
     <Compile Include="Templates\IBlogAuthor.cs" />
     <Compile Include="Templates\IBlogCategory.cs" />
     <Compile Include="Templates\IBlogDetail.cs" />

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Glass.Mapper.Sc.Configuration.Attributes;
 
 namespace Sitecore.Feature.Blog.Domain.Templates
 {
-    class IBlogAuthor
+    [SitecoreType(TemplateId = DataTemplateIds.BlogAuthor, AutoMap = true)]
+    public interface IBlogAuthor
     {
     }
 }
