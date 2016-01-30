@@ -5,6 +5,12 @@ Template: 40c7a406-d806-47f8-b017-94605781fb0f
 Path: /sitecore/templates/Feature/Blog/_BlogDetail/__Standard Values
 DB: master
 SharedFields:
+- ID: ac51462c-8a8d-493b-9492-34d1f26f20f1
+  Hint: __Default Bucket Query
+  Value: 
+- ID: c7815f60-96e1-40cb-bb06-b5f833f73b61
+  Hint: __Persistent Bucket Filter
+  Value: 
 - ID: c9283d9e-7c29-4419-9c28-5a5c8ff53e84
   Hint: __Bucketable
   Value: 1
@@ -16,6 +22,12 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20160130T140956Z
+    - ID: 2d934716-92cd-4989-97f2-8521afb731d0
+      Hint: BlogDetailDate
+      Value: $date
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       Hint: __Created by
       Value: sitecore\admin
+    - ID: 9e070870-a893-4ee1-9de3-4fd2b24ab5a0
+      Hint: BlogDetailTitle
+      Value: $name

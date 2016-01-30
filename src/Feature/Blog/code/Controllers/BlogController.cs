@@ -74,7 +74,16 @@
 
         public ActionResult BlogDetail()
         {
-            throw new NotImplementedException();
+            var detailSource = RenderingContext.DataSource;
+            if (!String.IsNullOrEmpty(detailSource))
+            {
+                var blogDetail = Context.GetItem<IBlogDetail>(detailSource);
+                return View(blogDetail);
+            }
+            else
+            {
+                return Content("No datasource set");
+            }
         }
     }
 }

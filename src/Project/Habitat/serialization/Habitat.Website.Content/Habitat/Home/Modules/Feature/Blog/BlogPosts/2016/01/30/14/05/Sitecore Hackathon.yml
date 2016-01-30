@@ -11,13 +11,13 @@ Languages:
     Fields:
     - ID: 243c40a6-89ba-4572-8996-b7a888c65476
       Hint: BlogDetailImage
-      Value: "<image mediapath=\"/Habitat/Images/Square/Habitat-014-square\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Square/Habitat-014-square\" mediaid=\"{8770B335-D8A4-4350-BCD5-AC503F0F99F9}\" />"
+      Value: "<image mediapath=\"/Habitat/Images/Square/Habitat-014-square\" alt=\" \" width=\"500\" height=\"500\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Square/Habitat-014-square\" mediaid=\"{8770B335-D8A4-4350-BCD5-AC503F0F99F9}\"></image>"
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20160130T140547Z
     - ID: 2d934716-92cd-4989-97f2-8521afb731d0
       Hint: BlogDetailDate
-      Value: 20160128T000000
+      Value: 20160128T060000Z
     - ID: 37c27543-57df-4002-8225-392ac7f54f0e
       Hint: BlogDetailAbstract
       Value: 24 hours later, only one team can come out on top. &nbsp;Who will it be?
