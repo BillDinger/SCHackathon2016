@@ -57,10 +57,10 @@
             var categoryList = categories.ToList();
             foreach (var item in items)
             {
-                if (categoryList.Any(x => x.CategoryName.Equals(item.Category.CategoryName)))
-                {
-                    results.Add(item);
-                }
+                var tags = item.Category;
+                results.AddRange(from tag in tags
+                    where categoryList.Any(x => x.CategoryName.Equals(tag.CategoryName))
+                    select item);
             }
 
             return results;
