@@ -126,6 +126,7 @@
     <Content Include="Views\Blog\BlogListing.cshtml" />
     <Content Include="Views\Blog\BlogDetail.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Blog.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -134,20 +135,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Controllers\BlogController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
+    <Compile Include="Factories\DefaultBlogFactory.cs" />
+    <Compile Include="Factories\Exceptions\ContainerAlreadyInitializedException.cs" />
+    <Compile Include="Factories\IBlogFactory.cs" />
     <Compile Include="Installers\BlogWindsorInstaller.cs" />
-    <Compile Include="Installers\WindsorControllerFactory.cs" />
     <Compile Include="Models\BlogListingModel.cs" />
     <Compile Include="Models\BlogSummaryModel.cs" />
+    <Compile Include="Pipelines\BlogStart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

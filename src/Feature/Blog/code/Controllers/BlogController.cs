@@ -6,14 +6,19 @@
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
     using Sitecore.Feature.Blog.Domain.Templates;
+    using Sitecore.Feature.Blog.Factories;
 
     public class BlogController : Controller
     {
-        private static IKernel _kernel;
+        private static IBlogFactory BlogFactory { get; set; }
 
-        public static void Init(IKernel kernel)
+        public static void Init(IBlogFactory blogFactory)
         {
-            _kernel = kernel;
+            if (blogFactory == null)
+            {
+                throw new ArgumentNullException(nameof(blogFactory));
+            }
+            BlogFactory = blogFactory;
         }
 
         private IContext Context { get; set; }
@@ -24,9 +29,9 @@
 
         public BlogController()
         {
-            Context = _kernel.Resolve<IContext>();
-            RenderingContext = _kernel.Resolve<IRenderingContext>();
-            Logger = _kernel.Resolve<ILogger>();
+            Context = BlogFactory.Create<IContext>();
+            RenderingContext = BlogFactory.Create<IRenderingContext>();
+            Logger = BlogFactory.Create<ILogger>();
 
         }
 
