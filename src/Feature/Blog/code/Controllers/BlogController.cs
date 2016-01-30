@@ -46,13 +46,13 @@
             }
 
             // 2.) 
-           
+
             throw new NotImplementedException();
         }
 
         public ActionResult BlogDetail()
         {
-
+            throw new NotImplementedException();
         }
     }
 }
