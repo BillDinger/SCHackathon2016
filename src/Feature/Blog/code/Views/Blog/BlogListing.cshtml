@@ -2,6 +2,7 @@
 @using Glass.Mapper.Sc
 @using Glass.Mapper.Sc.Web.Mvc
 @using Sitecore.Feature.Blog.Domain.Templates
+@using Sitecore.Mvc
 
 @model IList<Sitecore.Feature.Blog.Domain.Templates.IBlogDetail>
 
@@ -11,7 +12,7 @@
         margin: 1em 0;
         padding: .5em 10px;
         text-align: center;
-        background: linear-gradient(rgb(18,86,135), rgba(18,86,135,0.3));
+        background: linear-gradient(rgb(18, 86, 135), rgba(18, 86, 135, 0.3));
     }
 
     #scBlogTags li {
@@ -21,16 +22,16 @@
         display: inline;
     }
 
-        #scBlogTags li a {
-            text-decoration: none;
-            color: #fff;
-            padding: 0 2px;
-            text-shadow: 1px 1px black;
-        }
+    #scBlogTags li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 0 2px;
+        text-shadow: 1px 1px black;
+    }
 
-            #scBlogTags li a:hover {
-                color: gray;
-            }
+    #scBlogTags li a:hover {
+        color: gray;
+    }
 
     .scBlogTag1 {
         font-size: 100%;
@@ -60,39 +61,39 @@
         background: none;
     }
 
-        #scBlogTags .alt li {
-            padding: 2px 10px;
-            background: #efefef;
-            display: block;
-        }
+    #scBlogTags .alt li {
+        padding: 2px 10px;
+        background: #efefef;
+        display: block;
+    }
 
-        #scBlogTags .alt .scBlogTag1,
-        #scBlogTags .alt .scBlogTag2,
-        #scBlogTags .alt .scBlogTag3,
-        #scBlogTags .alt .scBlogTag4,
-        #scBlogTags .alt .scBlogTag5 {
-            font-size: 100%;
-        }
+    #scBlogTags .alt .scBlogTag1,
+    #scBlogTags .alt .scBlogTag2,
+    #scBlogTags .alt .scBlogTag3,
+    #scBlogTags .alt .scBlogTag4,
+    #scBlogTags .alt .scBlogTag5 {
+        font-size: 100%;
+    }
 
-        #scBlogTags .alt .scBlogTag1 {
-            background: #7cc0f4;
-        }
+    #scBlogTags .alt .scBlogTag1 {
+        background: #7cc0f4;
+    }
 
-        #scBlogTags .alt .scBlogTag2 {
-            background: #67abe0;
-        }
+    #scBlogTags .alt .scBlogTag2 {
+        background: #67abe0;
+    }
 
-        #scBlogTags .alt .scBlogTag3 {
-            background: #4d92c7;
-        }
+    #scBlogTags .alt .scBlogTag3 {
+        background: #4d92c7;
+    }
 
-        #scBlogTags .alt .scBlogTag4 {
-            background: #3277ad;
-        }
+    #scBlogTags .alt .scBlogTag4 {
+        background: #3277ad;
+    }
 
-        #scBlogTags .alt .scBlogTag5 {
-            background: #266ca2;
-        }
+    #scBlogTags .alt .scBlogTag5 {
+        background: #266ca2;
+    }
 
     .scBlog__dateBlock {
         background-color: #125687;
@@ -119,9 +120,9 @@
         border-radius: 25px;
     }
 
-        .scBlog__wrapper:hover {
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-        }
+    .scBlog__wrapper:hover {
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
 
     .scBlog__body p:not(:last-child)::after {
         display: block;
@@ -154,28 +155,31 @@
     .glyphicon-circle-arrow-right {
         margin-left: 1em;
     }
-    /*Landon Styles*/
+/*Landon Styles*/
 </style>
+
+@foreach (IBlogDetail blog in Model)
+{
+    @Html.Glass().Editable(blog, x => x.BlogDetailBody);
+
 <!-- Landon HTML -->
 <div class="article body col-sm-12 col-md-9">
     <a href="#" class="scBlog__wrapper">
         <div class="scBlog__header">
-            <h1>Blog Post Header</h1>
+            <h1>@Html.Glass().Editable(blog, x => x.BlogDetailTitle)</h1>
         </div>
         <div class="scBlog__body">
             <div class="scBlog__imageContainer">
                 <img class="img-responsive" src="http://placehold.it/650x150">
                 <div class="scBlog__dateBlock">
-                    <div class="scBlog__dateYear">2014 SEP</div>
-                    <div class="scBlog__dateDay">24</div>
+                    <div class="scBlog__dateYear">@Html.Glass().Editable(blog, x => x.BlogDetailDate.ToString("yyyy MMM"))</div>
+                    <div class="scBlog__dateDay">@Html.Glass().Editable(blog, x => x.BlogDetailDate.ToString("dd"))</div>
                 </div>
             </div>
         </div>
     </a>
     <div class="scBlog__footer">
         <div class="scBlog__meta">
-            <span>Author: <a href="#">Landon Cline</a></span>
-            <span> / </span>
             <a href="#"><span>0 Comments</span></a>
         </div>
     </div>
@@ -204,9 +208,6 @@
     <a class="btn" onclick="$('#scBlogTags ul').hide().addClass('alt').fadeIn('fast');">Tag View 1</a>
     <a class="btn" onclick="$('#scBlogTags ul').hide().removeClass('alt').fadeIn('fast');">Tag View 2</a>
 </div>
-<!-- Landon HTML -->
-
-@foreach (IBlogDetail blog in Model)
-{
-    @Html.Glass().Editable(blog, x => x.BlogDetailBody);
+    <!-- Landon HTML -->
 }
+
