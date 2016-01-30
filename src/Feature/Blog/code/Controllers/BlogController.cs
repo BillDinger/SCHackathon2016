@@ -2,6 +2,7 @@
 {
     using System;
     using System.Web.Mvc;
+    using Sitecore.Feature.Blog.CMS;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
     using Sitecore.Feature.Blog.Controllers.Exceptions;
@@ -31,6 +32,8 @@
 
         private IBlogRepository Repository { get; }
 
+        private int ItemsToDisplay { get; }
+
         public BlogController()
         {
             if (BlogFactory == null)
@@ -41,13 +44,14 @@
             RenderingContext = BlogFactory.Create<IRenderingContext>();
             Logger = BlogFactory.Create<ILogger>();
             Repository = BlogFactory.Create<IBlogRepository>();
+            ItemsToDisplay = BlogFactory.Create<ISitecoreConfiguration>().GetMaxNumberOfItemsToDisplay;
         }
 
 
         public ActionResult Index()
         {
             // 1.) Retrieve our current item from our context.
-            var listing = Context.GetCurrentItem<IBlogListing>();
+            var listing = Context.GetItem<IBlogListing>(RenderingContext.DataSource);
             if (listing == null)
             {
                 throw new NoBlogListingFoundException("No blog listing found attached to the current item.");
@@ -55,13 +59,15 @@
 
             // 2.) get our rendering parameters
             var parameters = RenderingContext.GetRenderingParameters<IBlogRenderingParameters>();
-            if (parameters == null)
+            int returnCount = ItemsToDisplay;
+            if (parameters != null)
             {
-                throw new RenderingParametersNotFoundException("No rendering parameters found for the item!");
+                returnCount = parameters.ItemsToDisplay;
             }
 
+
             // 3.) query for our items.
-            var items = Repository.GetBlogDetails(parameters.ItemsToDisplay, listing.DisplayedCategories, listing.StartItem);
+            var items = Repository.GetBlogDetails(returnCount, listing.DisplayedCategories, listing.StartItem);
 
             // 4.) Return our view
             return View("BlogListing", items);

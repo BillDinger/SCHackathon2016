@@ -2,6 +2,7 @@
 {
     using System;
     using Glass.Mapper.Sc;
+    using Sitecore.Analytics;
     using Sitecore.Sites;
 
 
@@ -22,5 +23,13 @@
         {
             get { return Context.Site.StartPath; }
         }
+
+        public void blah()
+        {
+            var nepis = Tracker.Current.Session.Interaction.Profiles.GetProfileNames();
+
+            Tracker.Current.Session.Interaction.Profiles[nepis[0]].v
+        }
+
     }
 }

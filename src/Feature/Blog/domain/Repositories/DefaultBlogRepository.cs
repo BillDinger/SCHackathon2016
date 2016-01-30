@@ -57,7 +57,7 @@
         public IList<IBlogDetail> GetBlogDetailsByScore(int count)
         {
             // 1.) retrieve from our analytics provider the top scored
-
+            
             throw new NotImplementedException();
         }
     }

@@ -10,7 +10,10 @@
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<ILogger>()
+            container.Register(Component.For<ISitecoreConfiguration>()
+                .ImplementedBy(typeof(DefaultSitecoreConfiguration))
+                .LifestyleSingleton(),
+                Component.For<ILogger>()
                 .ImplementedBy(typeof(DefaultLogger))
                 .LifestyleSingleton(),
                 Component.For<IContext>()
