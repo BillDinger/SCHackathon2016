@@ -1,0 +1,35 @@
+﻿---
+ID: 3203564d-5562-44f8-9bb2-a715a4a3c8d3
+Parent: ead62554-e255-46b4-98e6-9c98b8c152ed
+Template: db981d66-7ba8-48bf-9917-753827a8321f
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/_BlogListing
+DB: master
+SharedFields:
+- ID: a0cb3965-8884-4c7a-8815-b6b2e5ced162
+  Hint: __Editors
+  Type: TreelistEx
+  Value: {59F53BBB-D1F5-4E38-8EBA-0D73109BB59B}
+- ID: d312103c-b36c-4ca5-864a-c85f9abda503
+  Hint: __Is Bucket
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T212121Z
+    - ID: 6372ea8e-5635-40c2-949d-d4085f10b0b5
+      Hint: DisplayedCategories
+      Type: Multilist with Search
+      Value: |
+        {A416F999-EC47-49F2-A7D8-4480A01AF409}
+        {F3A37BA7-4DA1-4988-AAE6-DA185F3AD648}
+        {1D770907-A0A6-4B01-820C-A20B463168B4}
+    - ID: 6ddb6cf0-20e9-4648-a601-5c355319bc04
+      Hint: BlogListingTitle
+      Value: Habitat Blog
+    - ID: 7d14735d-5baf-4836-89c6-1c1fd615e229
+      Hint: StartItem
+      Value: {EAD62554-E255-46B4-98E6-9C98B8C152ED}
