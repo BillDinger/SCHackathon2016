@@ -58,6 +58,9 @@
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\..\..\..\lib\Sitecore\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <Choose>
@@ -73,10 +76,25 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\BlogControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\cms\Sitecore.Feature.Blog.CMS.csproj">
+      <Project>{35e3a5e7-cefd-4a6f-8cac-fb59f610f56e}</Project>
+      <Name>Sitecore.Feature.Blog.CMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\code\Sitecore.Feature.Blog.csproj">
+      <Project>{01d9a3d2-bf8b-4e65-8515-191760770217}</Project>
+      <Name>Sitecore.Feature.Blog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\Sitecore.Feature.Blog.Domain.csproj">
+      <Project>{0af7b420-e403-45f2-ad80-f884f7d2e8df}</Project>
+      <Name>Sitecore.Feature.Blog.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

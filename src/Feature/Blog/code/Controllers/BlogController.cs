@@ -34,5 +34,10 @@
             _context = context;
             _renderingContext = renderingContex;
         }
+
+        public ActionResult Index()
+        {
+
+        }
     }
 }
