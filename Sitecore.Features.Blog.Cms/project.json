@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0-*",
+  "description": "Sitecore.Features.Blog.Cms Class Library",
+  "authors": [ "bdinger" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "frameworks": {
+    "net451": {
+      "dependencies": {
+        "Castle.Windsor": "3.3.0"
+      }
+    },
+    "dotnet5.4": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  }
+}
