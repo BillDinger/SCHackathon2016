@@ -1,0 +1,14 @@
+﻿---
+ID: 1d770907-a0a6-4b01-820c-a20b463168b4
+Parent: 752f33cc-8ec3-4567-8080-8006ba9254c4
+Template: a0d2fd2c-3d32-4cc8-8ea2-56e756f0f0f8
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/Categories/Sad
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T220216Z

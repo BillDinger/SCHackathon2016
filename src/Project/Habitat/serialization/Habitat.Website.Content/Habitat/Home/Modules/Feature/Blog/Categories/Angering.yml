@@ -1,0 +1,14 @@
+﻿---
+ID: a416f999-ec47-49f2-a7d8-4480a01af409
+Parent: 752f33cc-8ec3-4567-8080-8006ba9254c4
+Template: a0d2fd2c-3d32-4cc8-8ea2-56e756f0f0f8
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/Categories/Angering
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T220124Z

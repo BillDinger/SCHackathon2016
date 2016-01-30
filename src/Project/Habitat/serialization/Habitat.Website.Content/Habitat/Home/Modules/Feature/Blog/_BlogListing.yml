@@ -20,3 +20,16 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20160130T212121Z
+    - ID: 6372ea8e-5635-40c2-949d-d4085f10b0b5
+      Hint: DisplayedCategories
+      Type: Multilist with Search
+      Value: |
+        {A416F999-EC47-49F2-A7D8-4480A01AF409}
+        {F3A37BA7-4DA1-4988-AAE6-DA185F3AD648}
+        {1D770907-A0A6-4B01-820C-A20B463168B4}
+    - ID: 6ddb6cf0-20e9-4648-a601-5c355319bc04
+      Hint: BlogListingTitle
+      Value: Habitat Blog
+    - ID: 7d14735d-5baf-4836-89c6-1c1fd615e229
+      Hint: StartItem
+      Value: {EAD62554-E255-46B4-98E6-9C98B8C152ED}
