@@ -1,0 +1,17 @@
+﻿---
+ID: 69abadfd-2d44-4e5b-aac6-770f8f9aa519
+Parent: ead62554-e255-46b4-98e6-9c98b8c152ed
+Template: a767a2dd-4742-4d85-bb8d-27853c6143a3
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/DaniellePorter
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T214827Z
+    - ID: ec6024cc-b2d6-4d75-a840-e315fe0c4824
+      Hint: AuthorName
+      Value: Danielle Porter
