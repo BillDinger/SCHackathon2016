@@ -66,6 +66,7 @@
     <Compile Include="Templates\IBlogCategory.cs" />
     <Compile Include="Templates\IBlogDetail.cs" />
     <Compile Include="Templates\IBlogListing.cs" />
+    <Compile Include="Templates\IBlogRenderingParameters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
