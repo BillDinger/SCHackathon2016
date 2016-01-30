@@ -1,0 +1,14 @@
+﻿---
+ID: 8ea1344d-cab8-49a1-a375-708f22ef7307
+Parent: 4b67a7f9-7246-4a59-a051-961095c2dc70
+Template: 543d09ef-903c-43eb-a548-4d6cc263f57f
+Path: /sitecore/content/Habitat/Global/BlogCategories
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T140357Z

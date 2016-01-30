@@ -15,9 +15,15 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20160130T115225Z
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      Hint: Summary
+      Value: Country aid is important.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       Hint: Title
       Value: Blog
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       Hint: BrowserTitle
       Value: Blog
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      Hint: Body
+      Value: Now is the time for all good men to come to the aid of their country.
