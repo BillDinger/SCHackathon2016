@@ -1,8 +1,6 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @model Sitecore.Feature.Blog.Domain.Templates.IBlogDetail
 
-@*
-
 <div class="news">
   <h2>
     @Html.Glass().Editable(Model, x => x.BlogDetailTitle)
@@ -17,4 +15,4 @@
   <div class="body">
     @Html.Glass().Editable(Model, x => x.BlogDetailBody)
   </div>
-</div>*@
+</div>
