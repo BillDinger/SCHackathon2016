@@ -50,6 +50,10 @@
       <HintPath>..\..\..\..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.FakeDb, Version=0.36.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.FakeDb.0.36.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -73,6 +77,8 @@
     <Compile Include="Repositories\DefaultBlogRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="App_Config\FieldTypes.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -83,7 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="App_Config\FieldTypes.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +93,10 @@
     <ProjectReference Include="..\..\code\Sitecore.Feature.Blog.csproj">
       <Project>{01d9a3d2-bf8b-4e65-8515-191760770217}</Project>
       <Name>Sitecore.Feature.Blog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\Sitecore.Feature.Blog.Domain.csproj">
+      <Project>{0af7b420-e403-45f2-ad80-f884f7d2e8df}</Project>
+      <Name>Sitecore.Feature.Blog.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

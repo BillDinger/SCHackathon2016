@@ -10,7 +10,7 @@
 
         string Language { get; }
 
-        SiteContext Site { get; }
+        string SiteStartPath { get; }
 
     }
 }

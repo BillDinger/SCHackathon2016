@@ -34,20 +34,31 @@
             {
                 return new List<IBlogDetail>();
             }
+            if (startItem == null)
+            {
+                // should be impossible!
+                throw new ArgumentNullException(nameof(startItem));
+            }
 
             // 2.) Create our Sitecore Fast query to pull all templates. For speed we pull relative to the
             // start item the user specifies
-            var query = string.Format("fast:{0}//**[@@id='{1}']//*[@@templateid='{2}']", Context.Site.StartPath,
+            var query = string.Format("fast:{0}//**[@@id='{1}']//*[@@templateid='{2}']", Context.SiteStartPath,
                 startItem.Id, DataTemplateIds.BlogDetail.ToUpper());
             Logger.Debug(string.Format("Running the query {0}", query), this);
 
             // 3.) Query our context
-            var items = Context.Query<IBlogDetail>(query).Take(count).ToList();
+            var items = Context.Query<IBlogDetail>(query).Take(count).OrderBy(x => x.BlogDetailDate).ToList();
             Logger.Debug(string.Format("Found {0} items for our query {1}, returning {2}",
                 items.Count(), query, count), this);
 
             return items;
         }
 
+        public IList<IBlogDetail> GetBlogDetailsByScore(int count)
+        {
+            // 1.) retrieve from our analytics provider the top scored
+
+            throw new NotImplementedException();
+        }
     }
 }

@@ -2,69 +2,74 @@
 {
     using System;
     using System.Web.Mvc;
-    using Castle.MicroKernel;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
+    using Sitecore.Feature.Blog.Controllers.Exceptions;
+    using Sitecore.Feature.Blog.Domain.Repositories;
     using Sitecore.Feature.Blog.Domain.Templates;
+    using Sitecore.Feature.Blog.Factories;
+    using Sitecore.Feature.Blog.Factories.Exceptions;
 
     public class BlogController : Controller
     {
-        private static IKernel _kernel;
+        private static IBlogFactory BlogFactory { get; set; }
 
-        public static void Init(IKernel kernel)
+        public static void Init(IBlogFactory blogFactory)
         {
-            _kernel = kernel;
+            if (blogFactory == null)
+            {
+                throw new ArgumentNullException(nameof(blogFactory));
+            }
+            BlogFactory = blogFactory;
         }
 
-        private IContext Context { get; set; }
+        private IContext Context { get; }
 
-        private IRenderingContext RenderingContext { get; set; }
+        private IRenderingContext RenderingContext { get; }
 
         private ILogger Logger { get; set; }
 
+        private IBlogRepository Repository { get; }
+
         public BlogController()
         {
-            Context = _kernel.Resolve<IContext>();
-            RenderingContext = _kernel.Resolve<IRenderingContext>();
-            Logger = _kernel.Resolve<ILogger>();
-
+            if (BlogFactory == null)
+            {
+                throw new ContainerNotFoundException("No di container was found, unable to start the controller!");
+            }
+            Context = BlogFactory.Create<IContext>();
+            RenderingContext = BlogFactory.Create<IRenderingContext>();
+            Logger = BlogFactory.Create<ILogger>();
+            Repository = BlogFactory.Create<IBlogRepository>();
         }
 
-        public ActionResult BlogListing()
+
+        public ActionResult Index()
         {
             // 1.) Retrieve our current item from our context.
-            var detailSource = RenderingContext.DataSource;
-            var listing = Context.GetItem<IBlogListing>(detailSource);
+            var listing = Context.GetCurrentItem<IBlogListing>();
+            if (listing == null)
+            {
+                throw new NoBlogListingFoundException("No blog listing found attached to the current item.");
+            }
 
-            if (!String.IsNullOrEmpty(listing))
+            // 2.) get our rendering parameters
+            var parameters = RenderingContext.GetRenderingParameters<IBlogRenderingParameters>();
+            if (parameters == null)
             {
-                var blogDetail = Context.GetItem<IBlogListing>(detailSource);
-                // 2.) get our rendering parameters
-                var parameters = RenderingContext.GetRenderingParameters<IBlogRenderingParameters>();
-                if (parameters == null)
-                {
-                    // TODO throw exceptions.
-                }
-                return View(blogDetail);
+                throw new RenderingParametersNotFoundException("No rendering parameters found for the item!");
             }
-            else
-            {
-                return Content("No datasource set");
-            }
+
+            // 3.) query for our items.
+            var items = Repository.GetBlogDetails(parameters.ItemsToDisplay, listing.DisplayedCategories, listing.StartItem);
+
+            // 4.) Return our view
+            return View("BlogListing", items);
         }
 
         public ActionResult BlogDetail()
         {
-            var detailSource = RenderingContext.DataSource;
-            if (!String.IsNullOrEmpty(detailSource))
-            {
-                var blogDetail = Context.GetItem<IBlogDetail>(detailSource);
-                return View(blogDetail);
-            }
-            else
-            {
-                return Content("No datasource set");
-            }
+            throw new NotImplementedException();
         }
     }
 }
