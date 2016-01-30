@@ -1,0 +1,21 @@
+﻿---
+ID: 6372ea8e-5635-40c2-949d-d4085f10b0b5
+Parent: cdc87b8d-e186-4456-9be3-93d089b0deba
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Feature/Blog/_BlogListing/Blog/DisplayedCategories
+DB: master
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  Hint: Type
+  Value: Multilist with Search
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T051058Z
