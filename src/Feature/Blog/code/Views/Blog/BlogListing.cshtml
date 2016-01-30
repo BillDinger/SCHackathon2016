@@ -2,6 +2,7 @@
 @using Glass.Mapper.Sc
 @using Glass.Mapper.Sc.Web.Mvc
 @using Sitecore.Feature.Blog.Domain.Templates
+@using Sitecore.Links
 @using Sitecore.Mvc
 
 @model IList<Sitecore.Feature.Blog.Domain.Templates.IBlogDetail>
@@ -158,12 +159,13 @@
 /*Landon Styles*/
 </style>
 
+@{
+    var tags = new List<string>();
+}
 @foreach (IBlogDetail blog in Model)
 {
-    @Html.Glass().Editable(blog, x => x.BlogDetailBody);
-
 <div class="article body col-sm-12 col-md-9">
-    <a href="#" class="scBlog__wrapper">
+    <a href="/sitecore/content/Habitat/Home/modules/feature/blog/blogposts/2016/01/30/14/05/sitecore%20hackathon" class="scBlog__wrapper">
         <div class="scBlog__header">
             <h1>@Html.Glass().Editable(blog, x => x.BlogDetailTitle)</h1>
         </div>
@@ -171,8 +173,8 @@
             <div class="scBlog__imageContainer">
                 <img class="img-responsive" src="http://placehold.it/650x150">
                 <div class="scBlog__dateBlock">
-                    <div class="scBlog__dateYear">@Html.Glass().Editable(blog, x => x.BlogDetailDate.ToString("yyyy MMM"))</div>
-                    <div class="scBlog__dateDay">@Html.Glass().Editable(blog, x => x.BlogDetailDate.ToString("dd"))</div>
+                    <div class="scBlog__dateYear">@blog.BlogDetailDate.ToString("yyyy MMM")</div>
+                    <div class="scBlog__dateDay">@blog.BlogDetailDate.ToString("dd")</div>
                 </div>
             </div>
         </div>
@@ -183,18 +185,23 @@
         </div>
     </div>
 </div>
+    tags.AddRange(blog.Category.Select(tag => tag.CategoryName));
+}
+
+
 <div class="col-sm-12 col-md-3">
+    <a class="btn" onclick="$('#scBlogTags ul').toggleClass('alt');">Tag View 1</a>
     <div id="scBlogTags">
         <ul>
-            @foreach (var tag in blog.Category)
-            { 
-            <li class="scBlogTag1"><a href="#">@tag.CategoryName</a></li>
-}
-            
+            @foreach (var tag in tags)
+            {
+                <li class="scBlogTag1"><a href="#">@tag</a></li>
+            }
+
         </ul>
     </div>
-    <a class="btn" onclick="$('#scBlogTags ul').hide().addClass('alt').fadeIn('fast');">Tag View 1</a>
-    <a class="btn" onclick="$('#scBlogTags ul').hide().removeClass('alt').fadeIn('fast');">Tag View 2</a>
+
 </div>
-}
+
+
 
