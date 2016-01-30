@@ -123,6 +123,8 @@
     <Content Include="App_Config\Include\Feature\Feature.Blog.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Blog\BlogDetail.cshtml" />
+    <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,7 +168,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>42417</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
