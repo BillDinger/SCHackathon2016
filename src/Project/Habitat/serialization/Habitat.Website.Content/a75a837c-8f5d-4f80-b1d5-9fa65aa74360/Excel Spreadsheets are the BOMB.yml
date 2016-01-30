@@ -1,0 +1,37 @@
+﻿---
+ID: d580e168-9155-4308-8ab4-4a4a5e383c3e
+Parent: a75a837c-8f5d-4f80-b1d5-9fa65aa74360
+Template: 40c7a406-d806-47f8-b017-94605781fb0f
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/BlogPosts/2016/01/30/19/37/Excel Spreadsheets are the BOMB
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 243c40a6-89ba-4572-8996-b7a888c65476
+      Hint: BlogDetailImage
+      Value: "<image mediaid=\"{867A5786-ED6B-4FE4-86EE-347417B99A73}\" alt=\"\" height=\"500\" width=\"500\" hspace=\"\" vspace=\"\" />"
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T193730Z
+    - ID: 2d934716-92cd-4989-97f2-8521afb731d0
+      Hint: BlogDetailDate
+      Value: 20160119T000000Z
+    - ID: 37c27543-57df-4002-8225-392ac7f54f0e
+      Hint: BlogDetailAbstract
+      Value: |
+        <p style="margin-bottom: 14px; padding: 0px; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis consectetur velit. Maecenas tincidunt dui risus, vitae viverra nisl dictum vestibulum. Suspendisse neque eros, posuere commodo ante eu, placerat ornare ipsum. Nam vulputate libero in dolor pharetra bibendum. Aenean fringilla sed velit eu gravida. Nunc mauris magna, ultrices at mollis sed, tempor nec erat. Praesent vestibulum et dolor nec fringilla. Nam ex diam, egestas et ornare quis, gravida ac purus. Mauris magna ipsum, feugiat lobortis ligula a, efficitur imperdiet nisi. Donec sit amet sem ut dui mollis imperdiet. Pellentesque id est vulputate, blandit diam eu, egestas purus. Integer at odio ligula. In at ullamcorper leo. Suspendisse viverra at arcu at vehicula. Cras egestas commodo lorem, in ullamcorper erat luctus quis. Etiam massa sem, accumsan et eros et, condimentum euismod sapien.</p>
+        <p style="margin-bottom: 14px; padding: 0px; text-align: justify;">Quisque quis tristique neque. Maecenas vestibulum, massa et consectetur tincidunt, mi enim mattis mi, id suscipit lorem metus id enim. Proin non scelerisque turpis. Sed fringilla cursus purus, vitae lacinia lacus. Donec rutrum venenatis tortor. Praesent sollicitudin leo efficitur molestie commodo. Fusce lacinia turpis eget lacus cursus, tempus dignissim enim pellentesque. Quisque sodales eu neque a consequat. Sed in mauris ex. Fusce sodales condimentum posuere.</p>
+        <p style="margin-bottom: 14px; padding: 0px; text-align: justify;">Phasellus nec ultricies lorem. Curabitur euismod sodales nibh nec iaculis. Praesent blandit convallis dui vitae sollicitudin. Vestibulum sit amet cursus enim. Nunc nec lorem sed felis bibendum tincidunt ut auctor lorem. Nam faucibus diam tempus sapien interdum, vitae ornare lectus aliquet. Sed suscipit, neque ut luctus semper, urna libero dictum nisl, sed placerat magna libero eu turpis. Integer sed dui dui. Aenean non purus et turpis placerat elementum. Duis sed consequat lacus. Vivamus mauris lorem, consectetur nec augue sit amet, blandit fermentum dolor. Nulla nec elementum orci. Fusce quis velit dignissim, tempor enim sed, placerat velit. Nulla ut dolor quis orci sagittis viverra sed vitae lectus. Phasellus molestie rutrum dui, eget porttitor ante volutpat in.</p>
+        <p style="margin-bottom: 14px; padding: 0px; text-align: justify;">Proin leo augue, consectetur nec velit a, consectetur dictum diam. Donec scelerisque pharetra ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris quis arcu quis sem ultrices commodo. Nam erat arcu, ultricies ut posuere vitae, pretium quis urna. Donec pulvinar, ex vel sodales viverra, dui ante commodo neque, et pellentesque diam leo et arcu. Nulla ut ornare ante. Donec lacinia sodales mauris. Maecenas congue nisl sit amet pellentesque iaculis. Proin ornare a ipsum non vestibulum. Sed blandit nibh dui, dapibus iaculis risus auctor vitae. Quisque dictum a urna sed malesuada. Cras dapibus, urna non consequat pellentesque, nunc est vestibulum lectus, at consequat dolor elit at velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    - ID: 6caec717-bc7c-4930-be4f-63abf84f31b3
+      Hint: BlogDetailBody
+      Value: |
+        <p style="margin-bottom: 14px; padding: 0px; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis consectetur velit. Maecenas tincidunt dui risus, vitae viverra nisl dictum vestibulum. Suspendisse neque eros, posuere commodo ante eu, placerat ornare ipsum. Nam vulputate libero in dolor pharetra bibendum. Aenean fringilla sed velit eu gravida. Nunc mauris magna, ultrices at mollis sed, tempor nec erat. Praesent vestibulum et dolor nec fringilla. Nam ex diam, egestas et ornare quis, gravida ac purus. Mauris magna ipsum, feugiat lobortis ligula a, efficitur imperdiet nisi. Donec sit amet sem ut dui mollis imperdiet. Pellentesque id est vulputate, blandit diam eu, egestas purus. Integer at odio ligula. In at ullamcorper leo. Suspendisse viverra at arcu at vehicula. Cras egestas commodo lorem, in ullamcorper erat luctus quis. Etiam massa sem, accumsan et eros et, condimentum euismod sapien.</p>
+        <p style="margin-bottom: 14px; padding: 0px; text-align: justify;">Quisque quis tristique neque. Maecenas vestibulum, massa et consectetur tincidunt, mi enim mattis mi, id suscipit lorem metus id enim. Proin non scelerisque turpis. Sed fringilla cursus purus, vitae lacinia lacus. Donec rutrum venenatis tortor. Praesent sollicitudin leo efficitur molestie commodo. Fusce lacinia turpis eget lacus cursus, tempus dignissim enim pellentesque. Quisque sodales eu neque a consequat. Sed in mauris ex. Fusce sodales condimentum posuere.</p>
+        <p style="margin-bottom: 14px; padding: 0px; text-align: justify;">Phasellus nec ultricies lorem. Curabitur euismod sodales nibh nec iaculis. Praesent blandit convallis dui vitae sollicitudin. Vestibulum sit amet cursus enim. Nunc nec lorem sed felis bibendum tincidunt ut auctor lorem. Nam faucibus diam tempus sapien interdum, vitae ornare lectus aliquet. Sed suscipit, neque ut luctus semper, urna libero dictum nisl, sed placerat magna libero eu turpis. Integer sed dui dui. Aenean non purus et turpis placerat elementum. Duis sed consequat lacus. Vivamus mauris lorem, consectetur nec augue sit amet, blandit fermentum dolor. Nulla nec elementum orci. Fusce quis velit dignissim, tempor enim sed, placerat velit. Nulla ut dolor quis orci sagittis viverra sed vitae lectus. Phasellus molestie rutrum dui, eget porttitor ante volutpat in.</p>
+        <p style="margin-bottom: 14px; padding: 0px; text-align: justify;">Proin leo augue, consectetur nec velit a, consectetur dictum diam. Donec scelerisque pharetra ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris quis arcu quis sem ultrices commodo. Nam erat arcu, ultricies ut posuere vitae, pretium quis urna. Donec pulvinar, ex vel sodales viverra, dui ante commodo neque, et pellentesque diam leo et arcu. Nulla ut ornare ante. Donec lacinia sodales mauris. Maecenas congue nisl sit amet pellentesque iaculis. Proin ornare a ipsum non vestibulum. Sed blandit nibh dui, dapibus iaculis risus auctor vitae. Quisque dictum a urna sed malesuada. Cras dapibus, urna non consequat pellentesque, nunc est vestibulum lectus, at consequat dolor elit at velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    - ID: 9e070870-a893-4ee1-9de3-4fd2b24ab5a0
+      Hint: BlogDetailTitle
+      Value: Excel Spreadsheets are the BOMB

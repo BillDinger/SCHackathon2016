@@ -4,6 +4,11 @@ Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 8ee208f9-a6a6-41e2-88a0-c188737a178c
 Path: /sitecore/content/Habitat/Home/Modules
 DB: master
+SharedFields:
+- ID: b0a67b2a-8b07-4e0b-8809-69f751709806
+  Hint: __Tracking
+  Type: Tracking
+  Value: <tracking />
 Languages:
 - Language: da
   Versions:

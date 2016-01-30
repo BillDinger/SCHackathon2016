@@ -1,8 +1,8 @@
 ﻿---
-ID: 6c309601-5575-4d77-9474-ce7f6a140018
-Parent: f626b170-cda1-421e-80e4-acb70f5b8cb2
+ID: 89873bec-efd7-46a5-8b04-9996cdfc94f1
+Parent: 725d6844-4d08-46cf-81b6-f70cabea65e1
 Template: 40c7a406-d806-47f8-b017-94605781fb0f
-Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/BlogPosts/2016/01/30/14/05/Sitecore Hackathon
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/BlogPosts/2016/01/30/19/42/Machine Language Programming for Dummies
 DB: master
 SharedFields:
 - ID: b0a67b2a-8b07-4e0b-8809-69f751709806
@@ -33,7 +33,7 @@ Languages:
       Value: 20160128T060000Z
     - ID: 37c27543-57df-4002-8225-392ac7f54f0e
       Hint: BlogDetailAbstract
-      Value: 24 hours later, only one team can come out on top. &nbsp;Who will it be?
+      Value: 111000010100101010100101001010100100101010100100101100101.
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       Hint: __Created by
       Value: sitecore\admin
@@ -47,4 +47,4 @@ Languages:
         Suspendisse sollicitudin, velit tempus interdum dictum, elit tellus facilisis erat, elementum pellentesque nisi sem eget dolor. Aliquam augue lectus, molestie in risus non, euismod hendrerit lacus. Nulla nec euismod nunc. Sed auctor ac odio non mattis. Morbi auctor odio ac maximus viverra. Aliquam tincidunt nunc in risus tincidunt malesuada. Donec ultricies eros ligula. Phasellus posuere libero eget justo malesuada, ac tincidunt tortor dapibus. Praesent in porta dui. Curabitur sit amet massa lectus. Etiam non elit maximus, egestas libero ac, scelerisque arcu. Sed eu ligula sagittis, euismod nisl ac, pellentesque erat. Nunc dignissim metus vel risus vulputate convallis. Proin sit amet enim dolor. Pellentesque eget mi arcu.
     - ID: 9e070870-a893-4ee1-9de3-4fd2b24ab5a0
       Hint: BlogDetailTitle
-      Value: Sitecore Hackathon
+      Value: Machine Language Programming For Dummies

@@ -4,6 +4,19 @@ Parent: cde4c225-ae8e-4eb6-847d-47734cb84e65
 Template: 40c7a406-d806-47f8-b017-94605781fb0f
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Blog/BlogPosts/2016/01/30/14/24/Whiteboards
 DB: master
+SharedFields:
+- ID: b0a67b2a-8b07-4e0b-8809-69f751709806
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus" presets="tech manager|100||">
+        <key name="Upper Management" value="0" />
+        <key name="Development" value="0" />
+        <key name="Technical Management" value="4" />
+        <key name="Project Management" value="0" />
+      </profile>
+    </tracking>
 Languages:
 - Language: en
   Versions:
