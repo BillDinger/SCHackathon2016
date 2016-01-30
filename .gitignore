@@ -23,3 +23,5 @@ vars.user.cmd
 temp/
 *.ncrunchproject
 *.ncrunchsolution
+*.dll
+*.pdb
