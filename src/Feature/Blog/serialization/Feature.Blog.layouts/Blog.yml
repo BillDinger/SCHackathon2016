@@ -1,0 +1,14 @@
+﻿---
+ID: f5baf4aa-79db-4f42-9335-7664e1fb497e
+Parent: da61ad50-8fdb-4252-a68f-b4470b1c9fe8
+Template: 7ee0975b-0698-493e-b3a2-0b2ef33d0522
+Path: /sitecore/layout/Renderings/Feature/Blog
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T115522Z
