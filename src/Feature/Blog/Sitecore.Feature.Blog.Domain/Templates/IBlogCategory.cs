@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Glass.Mapper.Sc.Configuration.Attributes;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sitecore.Feature.Blog.Domain.Templates
 {
-    class IBlogCategory
+    [SitecoreType(TemplateId = DataTemplateIds.BlogCategory, AutoMap = true)]
+    public interface IBlogCategory
     {
+        string CategoryName { get; set; }
+        IEnumerable<IBlogCategory> Categories { get; set; }
     }
 }

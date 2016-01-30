@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Glass.Mapper.Sc.Configuration.Attributes;
+using Glass.Mapper.Sc.Fields;
+using System;
 
 namespace Sitecore.Feature.Blog.Domain.Templates
 {
-    class IBlogDetail
+    [SitecoreType(TemplateId = DataTemplateIds.BlogDetail, AutoMap = true)]
+    public interface IBlogDetail
     {
+        DateTime BlogDetailDate { get; set; }
+        string BlogDetailTitle { get; set; }
+        string BlogDetailAbstract { get; set; }
+        string BlogDetailBody { get; set; }
+        Image BlogDetailImage { get; set; }
     }
 }
