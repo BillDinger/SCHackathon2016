@@ -3,6 +3,12 @@
   "version": -9996,
   "targets": {
     ".NETPlatform,Version=v5.0": {
+      "Castle.Core/3.3.0": {},
+      "Castle.Windsor/3.3.0": {
+        "dependencies": {
+          "Castle.Core": "3.3.0"
+        }
+      },
       "Microsoft.CSharp/4.0.0-beta-23019": {
         "dependencies": {
           "System.Runtime": "4.0.20-beta-23019",
@@ -219,6 +225,54 @@
     }
   },
   "libraries": {
+    "Castle.Core/3.3.0": {
+      "sha512": "wvlF47qlxKXurxSUWAnX79stVrnkuUPe5lHq26OiXUtMEngPaBcJ+5j+yVdFJ70hjUZpqg7qQK5hCZSex14ekQ==",
+      "files": [
+        "ASL - Apache Software Foundation License.txt",
+        "BreakingChanges.txt",
+        "Castle.Core.3.3.0.nupkg",
+        "Castle.Core.3.3.0.nupkg.sha512",
+        "Castle.Core.nuspec",
+        "Changes.txt",
+        "License.txt",
+        "readme.txt",
+        "lib/net35/Castle.Core.dll",
+        "lib/net35/Castle.Core.xml",
+        "lib/net40-client/Castle.Core.dll",
+        "lib/net40-client/Castle.Core.xml",
+        "lib/net45/Castle.Core.dll",
+        "lib/net45/Castle.Core.xml",
+        "lib/sl4/Castle.Core.dll",
+        "lib/sl4/Castle.Core.xml",
+        "lib/sl5/Castle.Core.dll",
+        "lib/sl5/Castle.Core.xml"
+      ]
+    },
+    "Castle.Windsor/3.3.0": {
+      "sha512": "5QiDI4DPLkIM7N9mTBaFlmh2GlWFZe+tF0tOzx0QdNE+pGWAm3gFrmKi4LnOIKIhGcocqW0zptMMIxidVMWqEQ==",
+      "files": [
+        "ASL - Apache Software Foundation License.txt",
+        "BreakingChanges.txt",
+        "Castle.Windsor.3.3.0.nupkg",
+        "Castle.Windsor.3.3.0.nupkg.sha512",
+        "Castle.Windsor.nuspec",
+        "Changes.txt",
+        "License.txt",
+        "readme.txt",
+        "lib/net35/Castle.Windsor.dll",
+        "lib/net35/Castle.Windsor.xml",
+        "lib/net40/Castle.Windsor.dll",
+        "lib/net40/Castle.Windsor.xml",
+        "lib/net40-client/Castle.Windsor.dll",
+        "lib/net40-client/Castle.Windsor.xml",
+        "lib/net45/Castle.Windsor.dll",
+        "lib/net45/Castle.Windsor.xml",
+        "lib/sl4/Castle.Windsor.dll",
+        "lib/sl4/Castle.Windsor.xml",
+        "lib/sl5/Castle.Windsor.dll",
+        "lib/sl5/Castle.Windsor.xml"
+      ]
+    },
     "Microsoft.CSharp/4.0.0-beta-23019": {
       "sha512": "TsYR8ylpBw89cxCTzA9eD8wqLR5u4TnNvUCLU7Qt9TlbxmNM0jPaz80L4N+W81kEoOpchlckGGCTA4JVemmEVA==",
       "files": [
@@ -537,7 +591,8 @@
       "System.Linq >= 4.0.0-beta-23019",
       "System.Threading >= 4.0.10-beta-23019",
       "System.Runtime >= 4.0.10-beta-23019",
-      "Microsoft.CSharp >= 4.0.0-beta-23019"
+      "Microsoft.CSharp >= 4.0.0-beta-23019",
+      "Castle.Windsor >= 3.3.0"
     ],
     ".NETPlatform,Version=v5.0": []
   }
