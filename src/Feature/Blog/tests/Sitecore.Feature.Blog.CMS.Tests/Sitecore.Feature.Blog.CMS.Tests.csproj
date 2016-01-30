@@ -87,7 +87,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sitecore.Feature.Blog.CMS\Sitecore.Feature.Blog.CMS.csproj">
+    <ProjectReference Include="..\..\Code\Sitecore.Feature.Blog.CMS\Sitecore.Feature.Blog.CMS.csproj">
       <Project>{35e3a5e7-cefd-4a6f-8cac-fb59f610f56e}</Project>
       <Name>Sitecore.Feature.Blog.CMS</Name>
     </ProjectReference>

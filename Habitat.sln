@@ -149,17 +149,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Testing
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blog", "Blog", "{3ADB862F-7E97-4C63-8475-A4C18520FC4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog", "src\Feature\Blog\Sitecore.Feature.Blog\Sitecore.Feature.Blog.csproj", "{01D9A3D2-BF8B-4E65-8515-191760770217}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog", "src\Feature\Blog\Code\Sitecore.Feature.Blog\Sitecore.Feature.Blog.csproj", "{01D9A3D2-BF8B-4E65-8515-191760770217}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog.CMS", "src\feature\blog\Sitecore.Feature.Blog.CMS\Sitecore.Feature.Blog.CMS.csproj", "{35E3A5E7-CEFD-4A6F-8CAC-FB59F610F56E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog.CMS", "src\feature\blog\Code\Sitecore.Feature.Blog.CMS\Sitecore.Feature.Blog.CMS.csproj", "{35E3A5E7-CEFD-4A6F-8CAC-FB59F610F56E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog.Domain", "src\feature\blog\Sitecore.Feature.Blog.Domain\Sitecore.Feature.Blog.Domain.csproj", "{0AF7B420-E403-45F2-AD80-F884F7D2E8DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog.Domain", "src\feature\blog\Code\Sitecore.Feature.Blog.Domain\Sitecore.Feature.Blog.Domain.csproj", "{0AF7B420-E403-45F2-AD80-F884F7D2E8DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog.Tests", "src\feature\blog\Sitecore.Feature.Blog.Tests\Sitecore.Feature.Blog.Tests.csproj", "{88F49B5E-DB47-4716-A6AB-440B3BB88D43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog.Tests", "src\feature\blog\Tests\Sitecore.Feature.Blog.Tests\Sitecore.Feature.Blog.Tests.csproj", "{88F49B5E-DB47-4716-A6AB-440B3BB88D43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog.CMS.Tests", "src\feature\blog\Sitecore.Feature.Blog.CMS.Tests\Sitecore.Feature.Blog.CMS.Tests.csproj", "{4FC17635-62AA-49E8-A4D8-70BD16DC0E4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Blog.CMS.Tests", "src\feature\blog\Tests\Sitecore.Feature.Blog.CMS.Tests\Sitecore.Feature.Blog.CMS.Tests.csproj", "{4FC17635-62AA-49E8-A4D8-70BD16DC0E4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Domain.Tests", "src\feature\blog\Sitecore.Feature.Domain.Tests\Sitecore.Feature.Domain.Tests.csproj", "{322974F9-07DF-4D0C-B323-8916C3F21A0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Domain.Tests", "src\feature\blog\Tests\Sitecore.Feature.Domain.Tests\Sitecore.Feature.Domain.Tests.csproj", "{322974F9-07DF-4D0C-B323-8916C3F21A0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
