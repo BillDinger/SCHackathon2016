@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Text;
     using Sitecore.Feature.Blog.CMS.Analytics;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
@@ -13,6 +14,8 @@
 
         private ILogger Logger { get; }
         private IContext Context { get; }
+
+        private IAnalyticsService AnalyticsService { get; }
 
         public DefaultBlogRepository(ILogger logger, IContext context, IAnalyticsService analyticsService)
         {
@@ -31,6 +34,7 @@
 
             Logger = logger;
             Context = context;
+            AnalyticsService = analyticsService;
         }
 
         /// <summary>
@@ -95,8 +99,33 @@
         public IList<IBlogDetail> GetBlogDetailsByScore(int count)
         {
             // 1.) retrieve from our analytics provider the names of hte top scored items.
-            //var tagNames
-            throw new NotImplementedException();
+            IList<string> tagNames = AnalyticsService.GetRankedTagNames();
+
+
+            var returnList = new Queue<IBlogDetail>();
+            foreach (var tag in tagNames)
+            {
+                // 2.) Create our query per tag.
+                var query = string.Format("fast:{0}//*[@@templateid='{2}' and @@name='{3}')]", Context.SiteStartPath,
+                    DataTemplateIds.BlogDetail.ToUpper(), tag);
+                Logger.Debug(string.Format("Running the query {0}", query), this);
+                var queryResult = Context.Query<IBlogDetail>(query);
+                if (queryResult != null)
+                {
+                    foreach (var result in queryResult)
+                    {
+                        returnList.Enqueue(result);
+                    }
+                }
+
+                // 3.) If we're over our query return list, yes I should perform this ahead of time but we're
+                // like a few minutes from deadline!
+                if (queryResult.Count() > count)
+                {
+                    return queryResult.Take(count).ToList();
+                }
+
+            }
         }
     }
 }

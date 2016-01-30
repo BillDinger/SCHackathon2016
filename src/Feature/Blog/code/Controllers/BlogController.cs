@@ -89,5 +89,13 @@
                 return Content("No datasource set");
             }
         }
+
+        public ActionResult RankedIndex()
+        {
+            // call our analytics service for our ranked item.
+            var result = Repository.GetBlogDetailsByScore(ItemsToDisplay);
+
+            return View("BlogListing", result);
+        }
     }
 }

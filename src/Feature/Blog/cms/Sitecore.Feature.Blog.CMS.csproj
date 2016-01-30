@@ -82,6 +82,8 @@
     <Compile Include="Configuration\ISitecoreConfiguration.cs" />
     <Compile Include="Log\DefaultLogger.cs" />
     <Compile Include="Log\ILogger.cs" />
+    <Compile Include="Managers\DefaultLinkManager.cs" />
+    <Compile Include="Managers\ILinkManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
