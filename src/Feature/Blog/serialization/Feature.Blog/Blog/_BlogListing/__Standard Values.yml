@@ -1,0 +1,17 @@
+﻿---
+ID: 4f67d283-08ec-4dab-845d-c00b8d5187c6
+Parent: db981d66-7ba8-48bf-9917-753827a8321f
+Template: db981d66-7ba8-48bf-9917-753827a8321f
+Path: /sitecore/templates/Feature/Blog/_BlogListing/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T211900Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin

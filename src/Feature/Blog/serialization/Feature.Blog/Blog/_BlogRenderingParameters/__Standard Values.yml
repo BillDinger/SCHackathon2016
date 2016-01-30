@@ -1,0 +1,18 @@
+﻿---
+ID: 596be447-c785-4b19-b7da-6c05962a3c0f
+Parent: cbfee2ce-df46-48db-a8d6-0f094d2972c0
+Template: cbfee2ce-df46-48db-a8d6-0f094d2972c0
+Path: /sitecore/templates/Feature/Blog/_BlogRenderingParameters/__Standard Values
+DB: master
+SharedFields:
+- ID: 3094d236-5985-4c4f-ae6a-e30740885532
+  Hint: Caching
+  Value: 0|0|0|0|0|0|0|0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T211933Z

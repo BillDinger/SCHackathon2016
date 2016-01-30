@@ -72,11 +72,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analytics\IAnalyticsService.cs" />
+    <Compile Include="Configuration\DefaultSitecoreConfiguration.cs" />
     <Compile Include="Contexts\DefaultContext.cs" />
     <Compile Include="Contexts\DefaultRenderingContext.cs" />
     <Compile Include="Contexts\IContext.cs" />
     <Compile Include="Contexts\IRenderingContext.cs" />
     <Compile Include="Installers\CMSWindsorInstaller.cs" />
+    <Compile Include="Configuration\ISitecoreConfiguration.cs" />
     <Compile Include="Log\DefaultLogger.cs" />
     <Compile Include="Log\ILogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,17 @@
+﻿---
+ID: ebce6329-39d3-4e13-80f4-5e2d19aafe0a
+Parent: a0d2fd2c-3d32-4cc8-8ea2-56e756f0f0f8
+Template: a0d2fd2c-3d32-4cc8-8ea2-56e756f0f0f8
+Path: /sitecore/templates/Feature/Blog/_BlogCategory/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T211908Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin

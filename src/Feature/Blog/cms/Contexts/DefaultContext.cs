@@ -28,7 +28,7 @@
         {
             var nepis = Tracker.Current.Session.Interaction.Profiles.GetProfileNames();
 
-            Tracker.Current.Session.Interaction.Profiles[nepis[0]].v
+            var teno = Tracker.Current.Session.Interaction.Profiles[nepis[0]];
         }
 
     }

@@ -4,6 +4,13 @@
 
     public class DefaultSitecoreConfiguration : ISitecoreConfiguration
     {
-        public int GetMaxNumberOfItemsToDisplay { get { return Settings.GetIntSetting("DefaultMaxBlogListings", 10); }
+        public int GetMaxNumberOfItemsToDisplay
+        {
+
+            get
+            {
+                return Settings.GetIntSetting("DefaultMaxBlogListings", 10);
+            } 
+        }
     }
 }
