@@ -6,6 +6,7 @@
     using Log;
     using Contexts;
     using Sitecore.Feature.Blog.CMS.Analytics;
+    using Sitecore.Feature.Blog.CMS.Managers;
 
     public class CmsWindsorInstaller : IWindsorInstaller
     {
@@ -26,6 +27,9 @@
                Component.For<IAnalyticsService>()
                 .ImplementedBy(typeof(DefaultAnalyticsService))
                 .LifestyleSingleton(),
+               Component.For<ILinkManager>()
+               .ImplementedBy(typeof(DefaultLinkManager))
+               .LifestyleSingleton(),
                 Classes.FromThisAssembly()
                   .InNamespace("Sitecore.Feature.Blog.CMS", true)
                   .WithServiceDefaultInterfaces()
