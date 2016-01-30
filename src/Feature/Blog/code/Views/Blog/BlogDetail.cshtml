@@ -1,21 +1,19 @@
-﻿@*@model IBlogDetail*@
-@using Glass.Mapper.Sc;
+﻿@model Sitecore.Feature.Blog.Domain.Templates.IBlogDetail
 @using Glass.Mapper.Sc.Web.Mvc
-@using Sitecore.Feature.Blog.Domain;
-@using Sitecore.Feature.Blog.Domain.Templates;
 
-@*<div class="blog">
+
+<div class="news">
   <h2>
     @Html.Glass().Editable(Model, x => x.BlogDetailTitle)
   </h2>
 
   <div class="well">
-    <span class="text-muted">
-      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })
+      <span class="text-muted">
+          @Html.Glass().Editable(Model, x => x.BlogDetailDate)
     </span>
   </div>
-  @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), Model.Item, mw: 1000, cssClass: "img-responsive image")
+  @Html.Glass().Editable(Model, x => x.BlogDetailImage)
   <div class="body">
-    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Body.ToString(), Model.Item)
+    @Html.Glass().Editable(Model, x => x.BlogDetailBody)
   </div>
-</div>*@
+</div>
