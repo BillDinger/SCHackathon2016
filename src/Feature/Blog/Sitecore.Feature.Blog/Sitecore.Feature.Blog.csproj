@@ -120,6 +120,9 @@
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
+    <Content Include="App_Config\Include\Feature\Feature.BLog.Serialization.config" />
+    <Content Include="App_Config\Include\Feature\Glass.Mapper.Sc.config" />
+    <Content Include="App_Config\Include\Feature\Glass.Mapper.Sc.Start.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
