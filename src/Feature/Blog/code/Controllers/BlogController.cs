@@ -17,15 +17,15 @@
         private readonly ILogger _logger;
         private ILogger Logger { get { return _logger; } }
 
-        public BlogController(IContext context, IRenderingContext renderingContex, ILogger logger)
+        public BlogController(IContext context, IRenderingContext renderingContext, ILogger logger)
         {
             if (context == null)
             {
                 throw new ArgumentNullException("context");
             }
-            if (renderingContex == null)
+            if (renderingContext == null)
             {
-                throw new ArgumentNullException("renderingContex");
+                throw new ArgumentNullException("renderingContext");
             }
             if (logger == null)
             {
@@ -33,7 +33,7 @@
             }
             _logger = logger;
             _context = context;
-            _renderingContext = renderingContex;
+            _renderingContext = renderingContext;
         }
 
         public ActionResult Index()
