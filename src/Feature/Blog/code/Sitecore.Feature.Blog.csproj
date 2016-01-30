@@ -150,11 +150,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sitecore.Feature.Blog.CMS\Sitecore.Feature.Blog.CMS.csproj">
+    <ProjectReference Include="..\cms\Sitecore.Feature.Blog.CMS.csproj">
       <Project>{35e3a5e7-cefd-4a6f-8cac-fb59f610f56e}</Project>
       <Name>Sitecore.Feature.Blog.CMS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sitecore.Feature.Blog.Domain\Sitecore.Feature.Blog.Domain.csproj">
+    <ProjectReference Include="..\domain\Sitecore.Feature.Blog.Domain.csproj">
       <Project>{0af7b420-e403-45f2-ad80-f884f7d2e8df}</Project>
       <Name>Sitecore.Feature.Blog.Domain</Name>
     </ProjectReference>

@@ -86,6 +86,16 @@
     <None Include="App_Config\FieldTypes.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\cms\Sitecore.Feature.Blog.CMS.csproj">
+      <Project>{35e3a5e7-cefd-4a6f-8cac-fb59f610f56e}</Project>
+      <Name>Sitecore.Feature.Blog.CMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\code\Sitecore.Feature.Blog.csproj">
+      <Project>{01d9a3d2-bf8b-4e65-8515-191760770217}</Project>
+      <Name>Sitecore.Feature.Blog</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
