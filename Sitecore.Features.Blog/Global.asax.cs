@@ -3,6 +3,7 @@
 namespace Sitecore.Features.Blog
 {
     using Castle.Windsor;
+    using Sitecore.Features.Blog.Installers;
 
     public class Global : System.Web.HttpApplication
     {
@@ -20,6 +21,10 @@ namespace Sitecore.Features.Blog
             var container = new WindsorContainer();
 
             // 2.) call our individual containers.
+            container.Install(new BlogWindsorInstaller());
+
+            // 3.) return our container back.
+            return Container;
         }
 
         protected void Session_Start(object sender, EventArgs e)
