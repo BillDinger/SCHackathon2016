@@ -118,8 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
-    <Content Include="App_Config\Include\Glass.Mapper.Sc.config" />
+    <Content Include="App_Config\Include\Feature\Glass.Mapper.Sc.Start.config" />
+    <Content Include="App_Config\Include\Feature\Glass.Mapper.Sc.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Blog.Serialization.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
