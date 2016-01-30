@@ -8,7 +8,10 @@ namespace Sitecore.Feature.Blog.Domain.Templates
     public interface IBlogListing : ISitecoreItem
     {
         IEnumerable<IBlogCategory> DisplayedCategories { get; set; }
+
         string BlogListingTitle { get; set; }
+
+        ISitecoreItem StartItem { get; set; }
 
     }
 }

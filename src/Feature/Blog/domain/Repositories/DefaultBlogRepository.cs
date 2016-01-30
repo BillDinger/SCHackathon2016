@@ -26,21 +26,27 @@
             Logger = logger;
             Context = context;
         }
-        public IEnumerable<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
+        public IList<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
             ISitecoreItem startItem)
         {
             // 1.) If no categories just return null.
             if (categories == null)
             {
-                return Enumerable.Empty<IBlogDetail>();
+                return new List<IBlogDetail>();
             }
 
             // 2.) Create our Sitecore Fast query to pull all templates. For speed we pull relative to the
-            // 
-            //var query = string.Format("fast:{0}//**[@@id='{1}']//*[@@templateid='{1}']", Context.Site.StartPath, templateId.ToString("B").ToUpper(),
-            //    fieldName, fieldValue);
+            // start item the user specifies
+            var query = string.Format("fast:{0}//**[@@id='{1}']//*[@@templateid='{2}']", Context.Site.StartPath,
+                startItem.Id, DataTemplateIds.BlogDetail.ToUpper());
+            Logger.Debug(string.Format("Running the query {0}", query), this);
 
-            throw new NotImplementedException();
+            // 3.) Query our context
+            var items = Context.Query<IBlogDetail>(query).Take(count).ToList();
+            Logger.Debug(string.Format("Found {0} items for our query {1}, returning {2}",
+                items.Count(), query, count), this);
+
+            return items;
         }
 
     }

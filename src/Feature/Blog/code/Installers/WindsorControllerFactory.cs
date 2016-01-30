@@ -9,10 +9,8 @@
 
     public class WindsorControllerFactory : DefaultControllerFactory
     {
-        private readonly IKernel _kernel;
-        private IKernel Kernel { get { return _kernel; } }
-        private readonly ILogger _logger;
-        private ILogger Logger { get { return _logger; } }
+        private IKernel Kernel { get; }
+        private ILogger Logger { get; }
 
         public WindsorControllerFactory(IKernel kernel, ILogger logger)
         {
@@ -25,14 +23,14 @@
                 throw new ArgumentNullException(nameof(logger));
             }
 
-            _kernel = kernel;
-            _logger = logger;
+            Kernel = kernel;
+            Logger = logger;
         }
 
 
         public override void ReleaseController(IController controller)
         {
-            _kernel.ReleaseComponent(controller);
+            Kernel.ReleaseComponent(controller);
         }
 
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
@@ -44,7 +42,7 @@
             }
             try
             {
-                return (IController)_kernel.Resolve(controllerType);
+                return (IController)Kernel.Resolve(controllerType);
             }
             catch (Exception ex)
             {
