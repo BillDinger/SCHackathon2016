@@ -66,13 +66,10 @@
     <Compile Include="Contexts\DefaultRenderingContext.cs" />
     <Compile Include="Contexts\IContext.cs" />
     <Compile Include="Contexts\IRenderingContext.cs" />
-    <Compile Include="Factories\DefaultCmsFactory.cs" />
-    <Compile Include="Factories\ICmsFactory.cs" />
     <Compile Include="Installers\CMSWindsorInstaller.cs" />
     <Compile Include="Log\DefaultLogger.cs" />
     <Compile Include="Log\ILogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validation\CategoriesNotRecursiveValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

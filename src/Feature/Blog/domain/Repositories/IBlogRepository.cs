@@ -1,10 +1,11 @@
-﻿namespace Sitecore.Feature.Blog.Domain.Services
+﻿namespace Sitecore.Feature.Blog.Domain.Repositories
 {
     using System.Collections.Generic;
-    using Templates;
+    using Sitecore.Feature.Blog.Domain.Templates;
 
-    public interface IBlogService
+    public interface IBlogRepository
     {
-        IList<IBlogDetail> Blogs(int count, IEnumerable<IBlogCategory> DisplayedCategories);
+        IEnumerable<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
+            ISitecoreItem startItem);
     }
 }

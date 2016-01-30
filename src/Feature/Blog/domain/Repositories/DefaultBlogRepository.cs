@@ -1,16 +1,18 @@
-﻿namespace Sitecore.Feature.Blog.Domain.Services
+﻿namespace Sitecore.Feature.Blog.Domain.Repositories
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
     using Sitecore.Feature.Blog.Domain.Templates;
 
-    public class DefaultBlogService : IBlogService
+    public class DefaultBlogRepository : IBlogRepository
     {
         private ILogger Logger { get; }
+        private IContext Context { get; }
 
-        public DefaultBlogService(ILogger logger, IContext context)
+        public DefaultBlogRepository(ILogger logger, IContext context)
         {
             if (logger == null)
             {
@@ -20,22 +22,26 @@
             {
                 throw new ArgumentNullException("context");
             }
-            Logger = logger;
-        }
 
-        public IList<IBlogDetail> Blogs(int count, IEnumerable<IBlogCategory> DisplayedCategories)
+            Logger = logger;
+            Context = context;
+        }
+        public IEnumerable<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
+            ISitecoreItem startItem)
         {
-            // 1.) If no categories, don't display any
-            if (DisplayedCategories == null)
+            // 1.) If no categories just return null.
+            if (categories == null)
             {
-                return new List<IBlogDetail>();
+                return Enumerable.Empty<IBlogDetail>();
             }
 
-            // 2.) Build a dynamic query based on how many 
-            // example: fast://sitecore/content///*[@@templateid='{066160AE-9C16-4CE8-89A9-74E05020E3A8}' and @SubProgramId='12345']
-            var query = string.Format("fast:{0}//*[@{1}='{2}']", Context.Site.RootPath, Iblo);
+            // 2.) Create our Sitecore Fast query to pull all templates. For speed we pull relative to the
+            // 
+            //var query = string.Format("fast:{0}//**[@@id='{1}']//*[@@templateid='{1}']", Context.Site.StartPath, templateId.ToString("B").ToUpper(),
+            //    fieldName, fieldValue);
 
-
+            throw new NotImplementedException();
         }
+
     }
 }

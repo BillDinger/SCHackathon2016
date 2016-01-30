@@ -3,7 +3,7 @@
 namespace Sitecore.Feature.Blog.Domain.Templates
 {
     [SitecoreType(TemplateId = DataTemplateIds.BlogAuthor, AutoMap = true)]
-    public interface IBlogAuthor
+    public interface IBlogAuthor : ISitecoreItem
     {
     }
 }

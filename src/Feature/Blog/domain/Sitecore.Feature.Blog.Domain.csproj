@@ -61,18 +61,24 @@
   <ItemGroup>
     <Compile Include="Installers\DomainWindsorInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DefaultBlogRepository.cs" />
+    <Compile Include="Repositories\IBlogRepository.cs" />
     <Compile Include="Templates\DataTemplateIds.cs" />
     <Compile Include="Templates\IBlogAuthor.cs" />
     <Compile Include="Templates\IBlogCategory.cs" />
     <Compile Include="Templates\IBlogDetail.cs" />
     <Compile Include="Templates\IBlogListing.cs" />
     <Compile Include="Templates\IBlogRenderingParameters.cs" />
+    <Compile Include="Templates\ISitecoreItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\cms\Sitecore.Feature.Blog.CMS.csproj">
+      <Project>{35e3a5e7-cefd-4a6f-8cac-fb59f610f56e}</Project>
+      <Name>Sitecore.Feature.Blog.CMS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
