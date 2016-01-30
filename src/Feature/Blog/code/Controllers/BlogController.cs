@@ -2,39 +2,52 @@
 {
     using System;
     using System.Web.Mvc;
+    using Castle.MicroKernel;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
     using Sitecore.Feature.Blog.Domain.Templates;
 
     public class BlogController : Controller
     {
-        private readonly IContext _context;
-        private IContext Context { get { return _context; } }
+        private static IKernel _kernel;
 
-        private readonly IRenderingContext _renderingContext;
-        private IRenderingContext RenderingContext { get { return _renderingContext; } }
-
-        private readonly ILogger _logger;
-        private ILogger Logger { get { return _logger; } }
-
-        public BlogController(IContext context, IRenderingContext renderingContex, ILogger logger)
+        public static void Init(IKernel kernel)
         {
-            if (context == null)
-            {
-                throw new ArgumentNullException("context");
-            }
-            if (renderingContex == null)
-            {
-                throw new ArgumentNullException("renderingContex");
-            }
-            if (logger == null)
-            {
-                throw new ArgumentNullException("logger");
-            }
-            _logger = logger;
-            _context = context;
-            _renderingContext = renderingContex;
+            _kernel = kernel;
         }
+
+        private IContext Context { get; set; }
+
+        private IRenderingContext RenderingContext { get; set; }
+
+        private ILogger Logger { get; set; }
+
+        public BlogController()
+        {
+            Context = _kernel.Resolve<IContext>();
+            RenderingContext = _kernel.Resolve<IRenderingContext>();
+            Logger = _kernel.Resolve<ILogger>();
+
+        }
+
+        //public BlogController(IContext context, IRenderingContext renderingContex, ILogger logger) 
+        //{
+        //    if (context == null)
+        //    {
+        //        throw new ArgumentNullException("context");
+        //    }
+        //    if (renderingContex == null)
+        //    {
+        //        throw new ArgumentNullException("renderingContex");
+        //    }
+        //    if (logger == null)
+        //    {
+        //        throw new ArgumentNullException("logger");
+        //    }
+        //    _logger = logger;
+        //    _context = context;
+        //    _renderingContext = renderingContex;
+        //}
 
         public ActionResult Index()
         {

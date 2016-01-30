@@ -5,7 +5,7 @@
 
     public interface IBlogRepository
     {
-        IEnumerable<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
+        IList<IBlogDetail> GetBlogDetails(int count, IEnumerable<IBlogCategory> categories,
             ISitecoreItem startItem);
     }
 }

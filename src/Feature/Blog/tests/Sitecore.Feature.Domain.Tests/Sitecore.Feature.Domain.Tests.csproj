@@ -69,16 +69,33 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="App_Start\GlassMapperSc.cs" />
-    <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DefaultBlogRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
-    <None Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\cms\Sitecore.Feature.Blog.CMS.csproj">
+      <Project>{35e3a5e7-cefd-4a6f-8cac-fb59f610f56e}</Project>
+      <Name>Sitecore.Feature.Blog.CMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\code\Sitecore.Feature.Blog.csproj">
+      <Project>{01d9a3d2-bf8b-4e65-8515-191760770217}</Project>
+      <Name>Sitecore.Feature.Blog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\Sitecore.Feature.Blog.Domain.csproj">
+      <Project>{0af7b420-e403-45f2-ad80-f884f7d2e8df}</Project>
+      <Name>Sitecore.Feature.Blog.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sitecore.Feature.Blog.CMS.Tests\Sitecore.Feature.Blog.CMS.Tests.csproj">
+      <Project>{4fc17635-62aa-49e8-a4d8-70bd16dc0e4d}</Project>
+      <Name>Sitecore.Feature.Blog.CMS.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sitecore.Feature.Blog.Tests\Sitecore.Feature.Blog.Tests.csproj">
+      <Project>{88f49b5e-db47-4716-a6ab-440b3bb88d43}</Project>
+      <Name>Sitecore.Feature.Blog.Tests</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
