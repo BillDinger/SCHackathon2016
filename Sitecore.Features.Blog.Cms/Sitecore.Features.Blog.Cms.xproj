@@ -7,7 +7,7 @@
 
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>a4e3b412-63e1-4000-950d-7e1f473cd10b</ProjectGuid>
+    <ProjectGuid>0fe4a358-1a7d-4e6a-ad60-bb8af9d89dbe</ProjectGuid>
     <RootNamespace>Sitecore.Features.Blog.Cms</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
