@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analytics\DefaultAnalyticsService.cs" />
     <Compile Include="Analytics\IAnalyticsService.cs" />
     <Compile Include="Configuration\DefaultSitecoreConfiguration.cs" />
     <Compile Include="Contexts\DefaultContext.cs" />

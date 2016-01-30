@@ -24,12 +24,5 @@
             get { return Context.Site.StartPath; }
         }
 
-        public void blah()
-        {
-            var nepis = Tracker.Current.Session.Interaction.Profiles.GetProfileNames();
-
-            var teno = Tracker.Current.Session.Interaction.Profiles[nepis[0]];
-        }
-
     }
 }
