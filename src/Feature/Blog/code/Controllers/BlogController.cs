@@ -49,27 +49,27 @@
         //    _renderingContext = renderingContex;
         //}
 
-        public ActionResult Index()
+        public ActionResult BlogListing()
         {
             // 1.) Retrieve our current item from our context.
-            var listing = Context.GetCurrentItem<IBlogListing>();
-            if (listing == null)
+            var detailSource = RenderingContext.DataSource;
+            var listing = Context.GetItem<IBlogListing>(detailSource);
+
+            if (!String.IsNullOrEmpty(listing))
             {
-                // TODO throw exception!
+                var blogDetail = Context.GetItem<IBlogListing>(detailSource);
+                // 2.) get our rendering parameters
+                var parameters = RenderingContext.GetRenderingParameters<IBlogRenderingParameters>();
+                if (parameters == null)
+                {
+                    // TODO throw exceptions.
+                }
+                return View(blogDetail);
             }
-
-            // 2.) get our rendering parameters
-            var parameters = RenderingContext.GetRenderingParameters<IBlogRenderingParameters>();
-            if (parameters == null)
+            else
             {
-                // TODO throw exceptions.
+                return Content("No datasource set");
             }
-
-            // 3.) Create our view.
-
-            // 4.) Return our controller.
-
-            throw new NotImplementedException();
         }
 
         public ActionResult BlogDetail()
