@@ -161,6 +161,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sitecore.Features.Blog.Doma
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sitecore.Features.Blog.Cms", "Sitecore.Features.Blog.Cms\Sitecore.Features.Blog.Cms.xproj", "{A4E3B412-63E1-4000-950D-7E1F473CD10B}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sitecore.Features.Cms", "Sitecore.Features.Cms\Sitecore.Features.Cms.xproj", "{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -511,6 +513,14 @@ Global
 		{A4E3B412-63E1-4000-950D-7E1F473CD10B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A4E3B412-63E1-4000-950D-7E1F473CD10B}.Release|x64.ActiveCfg = Release|Any CPU
 		{A4E3B412-63E1-4000-950D-7E1F473CD10B}.Release|x64.Build.0 = Release|Any CPU
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}.Debug|x64.Build.0 = Debug|Any CPU
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}.Release|x64.ActiveCfg = Release|Any CPU
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -585,5 +595,6 @@ Global
 		{10AEE26C-F06B-462B-9864-3FC550EA31FB} = {E016A6FF-C025-44D3-9999-5C7E3FD1AE0D}
 		{22D60658-FDEE-4DDF-B198-771F1BCD9BBF} = {E016A6FF-C025-44D3-9999-5C7E3FD1AE0D}
 		{A4E3B412-63E1-4000-950D-7E1F473CD10B} = {E016A6FF-C025-44D3-9999-5C7E3FD1AE0D}
+		{91AECD67-3ADC-4CDE-A264-6AE3447C1D8F} = {E016A6FF-C025-44D3-9999-5C7E3FD1AE0D}
 	EndGlobalSection
 EndGlobal
