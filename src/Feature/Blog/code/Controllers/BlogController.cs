@@ -4,6 +4,7 @@
     using System.Web.Mvc;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
+    using Sitecore.Feature.Blog.Domain.Templates;
 
     public class BlogController : Controller
     {
@@ -37,6 +38,15 @@
 
         public ActionResult Index()
         {
+            // 1.) Retrieve our current item from our context.
+            var listing = Context.GetCurrentItem<IBlogListing>();
+            if (listing == null)
+            {
+                // TODO throw exception!
+            }
+
+            // 2.) 
+           
             throw new NotImplementedException();
         }
     }
