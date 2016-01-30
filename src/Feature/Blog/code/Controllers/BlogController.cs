@@ -54,14 +54,15 @@
             }
 
             // 2.) get our rendering parameters
+            int itemsToDisplay = 10;
             var parameters = RenderingContext.GetRenderingParameters<IBlogRenderingParameters>();
-            if (parameters == null)
+            if (parameters != null)
             {
-                throw new RenderingParametersNotFoundException("No rendering parameters found for the item!");
+                itemsToDisplay = parameters.ItemsToDisplay;
             }
 
             // 3.) query for our items.
-            var items = Repository.GetBlogDetails(parameters.ItemsToDisplay, listing.DisplayedCategories, listing.StartItem);
+            var items = Repository.GetBlogDetails(itemsToDisplay, listing.DisplayedCategories, listing.StartItem);
 
             // 4.) Return our view
             return View("BlogListing", items);

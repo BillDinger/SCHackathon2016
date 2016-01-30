@@ -5,6 +5,206 @@
 
 @model IList<Sitecore.Feature.Blog.Domain.Templates.IBlogDetail>
 
+<style>
+    /*Landon Styles*/
+    #scBlogTags ul {
+        margin: 1em 0;
+        padding: .5em 10px;
+        text-align: center;
+        background: linear-gradient(rgb(18,86,135), rgba(18,86,135,0.3));
+    }
+
+    #scBlogTags li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline;
+    }
+
+        #scBlogTags li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 0 2px;
+            text-shadow: 1px 1px black;
+        }
+
+            #scBlogTags li a:hover {
+                color: gray;
+            }
+
+    .scBlogTag1 {
+        font-size: 100%;
+    }
+
+    .scBlogTag2 {
+        font-size: 120%;
+    }
+
+    .scBlogTag3 {
+        font-size: 140%;
+    }
+
+    .scBlogTag4 {
+        font-size: 160%;
+    }
+
+    .scBlogTag5 {
+        font-size: 180%;
+    }
+
+    /* alternative layout */
+
+    #scBlogTags .alt {
+        text-align: left;
+        padding: 0;
+        background: none;
+    }
+
+        #scBlogTags .alt li {
+            padding: 2px 10px;
+            background: #efefef;
+            display: block;
+        }
+
+        #scBlogTags .alt .scBlogTag1,
+        #scBlogTags .alt .scBlogTag2,
+        #scBlogTags .alt .scBlogTag3,
+        #scBlogTags .alt .scBlogTag4,
+        #scBlogTags .alt .scBlogTag5 {
+            font-size: 100%;
+        }
+
+        #scBlogTags .alt .scBlogTag1 {
+            background: #7cc0f4;
+        }
+
+        #scBlogTags .alt .scBlogTag2 {
+            background: #67abe0;
+        }
+
+        #scBlogTags .alt .scBlogTag3 {
+            background: #4d92c7;
+        }
+
+        #scBlogTags .alt .scBlogTag4 {
+            background: #3277ad;
+        }
+
+        #scBlogTags .alt .scBlogTag5 {
+            background: #266ca2;
+        }
+
+    .scBlog__dateBlock {
+        background-color: #125687;
+        color: #fff;
+        width: 65px;
+        height: 65px;
+        text-align: center;
+        margin-right: 20px;
+        position: absolute;
+        top: 0;
+    }
+
+    .scBlog__dateDay {
+        font-size: 40px;
+    }
+
+    .scBlog__dateYear {
+        font-size: 10px;
+    }
+
+    .scBlog__wrapper {
+        display: block;
+        padding: 0.5em;
+        border-radius: 25px;
+    }
+
+        .scBlog__wrapper:hover {
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        }
+
+    .scBlog__body p:not(:last-child)::after {
+        display: block;
+        width: 30%;
+        content: '';
+        border-bottom: black 1px solid;
+        margin: 0 auto;
+        padding-top: 1em;
+    }
+
+    .scBlog__imageContainer {
+        position: relative;
+        margin-bottom: 1em;
+    }
+
+    .scBlog__footer {
+        padding: 0.5em;
+        margin-bottom: 3em;
+    }
+
+    .scBlog__meta {
+        border-bottom: 1px solid #125687;
+        padding-bottom: 1em;
+    }
+
+    .glyphicon-circle-arrow-left {
+        margin-right: 1em;
+    }
+
+    .glyphicon-circle-arrow-right {
+        margin-left: 1em;
+    }
+    /*Landon Styles*/
+</style>
+<!-- Landon HTML -->
+<div class="article body col-sm-12 col-md-9">
+    <a href="#" class="scBlog__wrapper">
+        <div class="scBlog__header">
+            <h1>Blog Post Header</h1>
+        </div>
+        <div class="scBlog__body">
+            <div class="scBlog__imageContainer">
+                <img class="img-responsive" src="http://placehold.it/650x150">
+                <div class="scBlog__dateBlock">
+                    <div class="scBlog__dateYear">2014 SEP</div>
+                    <div class="scBlog__dateDay">24</div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="scBlog__footer">
+        <div class="scBlog__meta">
+            <span>Author: <a href="#">Landon Cline</a></span>
+            <span> / </span>
+            <a href="#"><span>0 Comments</span></a>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 col-md-3">
+    <div id="scBlogTags">
+        <ul>
+            <li class="scBlogTag1"><a href="#">Lorem ipsum</a></li>
+            <li class="scBlogTag2"><a href="#">Dolor sit amet</a></li>
+            <li class="scBlogTag3"><a href="#">Consectetur adipiscing elit</a></li>
+            <li class="scBlogTag2"><a href="#">Proin </a></li>
+            <li class="scBlogTag4"><a href="#">Sagittis libero</a></li>
+            <li class="scBlogTag1"><a href="#">Aliquet augue</a></li>
+            <li class="scBlogTag1"><a href="#">Quisque dui lacus</a></li>
+            <li class="scBlogTag5"><a href="#">Consequat</a></li>
+            <li class="scBlogTag2"><a href="#">Dictum non</a></li>
+            <li class="scBlogTag1"><a href="#">Venenatis et tortor</a></li>
+            <li class="scBlogTag3"><a href="#">Suspendisse mauris</a></li>
+            <li class="scBlogTag4"><a href="#">In accumsan </a></li>
+            <li class="scBlogTag1"><a href="#">Egestas neque</a></li>
+            <li class="scBlogTag5"><a href="#">Mauris eget felis</a></li>
+            <li class="scBlogTag1"><a href="#">Suspendisse</a></li>
+            <li class="scBlogTag2"><a href="#">condimentum eleifend nulla</a></li>
+        </ul>
+    </div>
+    <a class="btn" onclick="$('#scBlogTags ul').hide().addClass('alt').fadeIn('fast');">Tag View 1</a>
+    <a class="btn" onclick="$('#scBlogTags ul').hide().removeClass('alt').fadeIn('fast');">Tag View 2</a>
+</div>
+<!-- Landon HTML -->
 
 @foreach (IBlogDetail blog in Model)
 {

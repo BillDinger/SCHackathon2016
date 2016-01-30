@@ -25,7 +25,8 @@ Languages:
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
           <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r uid="{CDC4220B-3FD3-42EF-8CAA-A5323DBE0E10}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{4F6CF5C2-A725-41C9-AB3A-10E0D44F3E68}" s:id="{72B05C08-0D61-4376-BCD0-D04227CF24D1}" s:par="" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{A305107B-0264-43BC-B71D-614EBFCFD0C5}" p:before="r[@uid='{8E0DAF01-A594-4154-A2FA-CB36911D1C76}']" s:id="{EA326351-04C4-44CA-ADF0-3D135563B240}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{8E0DAF01-A594-4154-A2FA-CB36911D1C76}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{EA326351-04C4-44CA-ADF0-3D135563B240}" s:ph="/page-layout/sidebarcontent" />
             <r uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}">
               <p:d />
             </r>
