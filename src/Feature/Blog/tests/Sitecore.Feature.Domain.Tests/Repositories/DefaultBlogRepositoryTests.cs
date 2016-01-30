@@ -7,6 +7,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
     using Sitecore.Feature.Blog.App_Start;
+    using Sitecore.Feature.Blog.CMS.Analytics;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
     using Sitecore.Feature.Blog.Domain.Repositories;
@@ -33,9 +34,10 @@
             // arrange
             var mockLogger = new Mock<ILogger>();
             var mockContext = new Mock<IContext>();
+            var mockService = new Mock<IAnalyticsService>();
 
             // act.
-            var repository = new DefaultBlogRepository(mockLogger.Object, mockContext.Object);
+            var repository = new DefaultBlogRepository(mockLogger.Object, mockContext.Object, mockService.Object);
 
             // assert.
             Assert.IsNotNull(repository);
@@ -47,11 +49,11 @@
         {
             // arrange
             var mockContext = new Mock<IContext>();
-
+            var mockService = new Mock<IAnalyticsService>();
             try
             {
                 // act.
-                var repository = new DefaultBlogRepository(null, mockContext.Object);
+                var repository = new DefaultBlogRepository(null, mockContext.Object, mockService.Object);
                 Assert.IsNull(repository);
             }
             catch (ArgumentNullException ex)
@@ -68,11 +70,11 @@
         {
             // arrange
             var mockLogger = new Mock<ILogger>();
-
+            var mockService = new Mock<IAnalyticsService>();
             try
             {
                 // act.
-                var repository = new DefaultBlogRepository(mockLogger.Object, null);
+                var repository = new DefaultBlogRepository(mockLogger.Object, null, mockService.Object);
                 Assert.IsNull(repository);
             }
             catch (ArgumentNullException ex)
@@ -89,7 +91,8 @@
             // arrange
             var mockLogger = new Mock<ILogger>();
             var mockContext = new Mock<IContext>();
-            var repository = new DefaultBlogRepository(mockLogger.Object, mockContext.Object);
+            var mockService = new Mock<IAnalyticsService>();
+            var repository = new DefaultBlogRepository(mockLogger.Object, mockContext.Object, mockService.Object);
 
             // act.
             IList<IBlogDetail> blogs = repository.GetBlogDetails(10, null, null);
@@ -105,7 +108,8 @@
             // arrange
             var mockLogger = new Mock<ILogger>();
             var mockContext = new Mock<IContext>();
-            var repository = new DefaultBlogRepository(mockLogger.Object, mockContext.Object);
+            var mockService = new Mock<IAnalyticsService>();
+            var repository = new DefaultBlogRepository(mockLogger.Object, mockContext.Object, mockService.Object);
 
             // setup our mock categories
             var mockCategory = new Mock<IBlogCategory>();
@@ -149,7 +153,8 @@
             mockContext.Setup(x => x.SiteStartPath).Returns("/blah/blah");
             // setup the repo
             var mockLogger = new Mock<ILogger>();
-            var repository = new DefaultBlogRepository(mockLogger.Object, mockContext.Object);
+            var mockService = new Mock<IAnalyticsService>();
+            var repository = new DefaultBlogRepository(mockLogger.Object, mockContext.Object, mockService.Object);
 
             // act
             var result = repository.GetBlogDetails(2, mockCategories, mockItem.Object);

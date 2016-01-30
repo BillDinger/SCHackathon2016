@@ -5,6 +5,7 @@
     using Castle.Windsor;
     using Log;
     using Contexts;
+    using Sitecore.Feature.Blog.CMS.Analytics;
 
     public class CmsWindsorInstaller : IWindsorInstaller
     {
@@ -21,6 +22,9 @@
                 .LifestyleSingleton(),
                 Component.For<IRenderingContext>()
                 .ImplementedBy(typeof(DefaultRenderingContext))
+                .LifestyleSingleton(),
+               Component.For<IAnalyticsService>()
+                .ImplementedBy(typeof(DefaultAnalyticsService))
                 .LifestyleSingleton(),
                 Classes.FromThisAssembly()
                   .InNamespace("Sitecore.Feature.Blog.CMS", true)
