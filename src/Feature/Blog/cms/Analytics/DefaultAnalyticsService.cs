@@ -8,9 +8,22 @@
     {
         public IList<string> GetRankedTagNames()
         {
-            var nepis = Tracker.Current.Session.Interaction.Profiles.GetProfileNames();
+           
+            // 1.) Get ProfileNames
+            var profiles = Tracker.Current.Session.Interaction.Profiles.GetProfileNames();
 
-            var teno = Tracker.Current.Session.Interaction.Profiles[nepis[0]];
+            // 2.) For each profile in the profile name, get their name and rank
+            var tags = new Dictionary<string, float>();
+            if(profiles != null)
+            {
+                foreach (var profile in profiles)
+                {
+                    tags.Add(profile, Tracker.Current.Session.Interaction.Profiles[profile].Total);
+                }
+            }
+
+
+            // 3.) return out tags
 
             throw new NotImplementedException();
         }

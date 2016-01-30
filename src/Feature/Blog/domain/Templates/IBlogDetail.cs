@@ -12,5 +12,6 @@ namespace Sitecore.Feature.Blog.Domain.Templates
         string BlogDetailAbstract { get; set; }
         string BlogDetailBody { get; set; }
         Image BlogDetailImage { get; set; }
+        IBlogCategory Category { get; set; }
     }
 }
