@@ -82,10 +82,10 @@
 
         public ActionResult BlogDetail()
         {
-            var detailSource = RenderingContext.DataSource;
-            if (!String.IsNullOrEmpty(detailSource))
+            var blogDetail = Context.GetCurrentItem<IBlogDetail>();
+            if (blogDetail != null)
             {
-                var blogDetail = Context.GetItem<IBlogDetail>(detailSource);
+
                 return View(blogDetail);
             }
             else
