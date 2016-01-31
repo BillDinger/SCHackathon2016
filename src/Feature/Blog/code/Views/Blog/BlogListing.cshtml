@@ -5,7 +5,7 @@
 @using Sitecore.Links
 @using Sitecore.Mvc
 
-@model IList<Sitecore.Feature.Blog.Domain.Templates.IBlogDetail>
+@model Sitecore.Feature.Blog.Models.BlogListingModel
 
 <style>
     /*Landon Styles*/
@@ -23,16 +23,16 @@
         display: inline;
     }
 
-    #scBlogTags li a {
-        text-decoration: none;
-        color: #fff;
-        padding: 0 2px;
-        text-shadow: 1px 1px black;
-    }
+        #scBlogTags li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 0 2px;
+            text-shadow: 1px 1px black;
+        }
 
-    #scBlogTags li a:hover {
-        color: gray;
-    }
+            #scBlogTags li a:hover {
+                color: gray;
+            }
 
     .scBlogTag1 {
         font-size: 100%;
@@ -62,39 +62,39 @@
         background: none;
     }
 
-    #scBlogTags .alt li {
-        padding: 2px 10px;
-        background: #efefef;
-        display: block;
-    }
+        #scBlogTags .alt li {
+            padding: 2px 10px;
+            background: #efefef;
+            display: block;
+        }
 
-    #scBlogTags .alt .scBlogTag1,
-    #scBlogTags .alt .scBlogTag2,
-    #scBlogTags .alt .scBlogTag3,
-    #scBlogTags .alt .scBlogTag4,
-    #scBlogTags .alt .scBlogTag5 {
-        font-size: 100%;
-    }
+        #scBlogTags .alt .scBlogTag1,
+        #scBlogTags .alt .scBlogTag2,
+        #scBlogTags .alt .scBlogTag3,
+        #scBlogTags .alt .scBlogTag4,
+        #scBlogTags .alt .scBlogTag5 {
+            font-size: 100%;
+        }
 
-    #scBlogTags .alt .scBlogTag1 {
-        background: #7cc0f4;
-    }
+        #scBlogTags .alt .scBlogTag1 {
+            background: #7cc0f4;
+        }
 
-    #scBlogTags .alt .scBlogTag2 {
-        background: #67abe0;
-    }
+        #scBlogTags .alt .scBlogTag2 {
+            background: #67abe0;
+        }
 
-    #scBlogTags .alt .scBlogTag3 {
-        background: #4d92c7;
-    }
+        #scBlogTags .alt .scBlogTag3 {
+            background: #4d92c7;
+        }
 
-    #scBlogTags .alt .scBlogTag4 {
-        background: #3277ad;
-    }
+        #scBlogTags .alt .scBlogTag4 {
+            background: #3277ad;
+        }
 
-    #scBlogTags .alt .scBlogTag5 {
-        background: #266ca2;
-    }
+        #scBlogTags .alt .scBlogTag5 {
+            background: #266ca2;
+        }
 
     .scBlog__dateBlock {
         background-color: #125687;
@@ -121,9 +121,9 @@
         border-radius: 25px;
     }
 
-    .scBlog__wrapper:hover {
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-    }
+        .scBlog__wrapper:hover {
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        }
 
     .scBlog__body p:not(:last-child)::after {
         display: block;
@@ -156,36 +156,41 @@
     .glyphicon-circle-arrow-right {
         margin-left: 1em;
     }
-/*Landon Styles*/
+    /*Landon Styles*/
 </style>
 
 @{
-    var tags = new List<string>();
+    // TODO move to view model
+    var tags = new List<IBlogCategory>();
+    if (Model.Listing != null)
+    {
+        tags = Model.Listing.DisplayedCategories.ToList();
+    }
 }
-@foreach (IBlogDetail blog in Model)
+@foreach (IBlogDetail blog in Model.Blogs)
 {
-<div class="article body col-sm-12 col-md-9">
-    <a href="/sitecore/content/Habitat/Home/modules/feature/blog/blogposts/2016/01/30/14/05/sitecore%20hackathon" class="scBlog__wrapper">
-        <div class="scBlog__header">
-            <h1>@Html.Glass().Editable(blog, x => x.BlogDetailTitle)</h1>
-        </div>
-        <div class="scBlog__body">
-            <div class="scBlog__imageContainer">
-                <img class="img-responsive" src="http://placehold.it/650x150">
-                <div class="scBlog__dateBlock">
-                    <div class="scBlog__dateYear">@blog.BlogDetailDate.ToString("yyyy MMM")</div>
-                    <div class="scBlog__dateDay">@blog.BlogDetailDate.ToString("dd")</div>
+    <div class="article body col-sm-12 col-md-9">
+        <a href="@Model.LinkManager.GetItemUrl(blog.Id)" class="scBlog__wrapper">
+            <div class="scBlog__header">
+                <h1>@Html.Glass().Editable(blog, x => x.BlogDetailTitle)</h1>
+            </div>
+            <div class="scBlog__body">
+                <div class="scBlog__imageContainer">
+                    <img class="img-responsive" src="http://placehold.it/650x150">
+                    <div class="scBlog__dateBlock">
+                        <div class="scBlog__dateYear">@blog.BlogDetailDate.ToString("yyyy MMM")</div>
+                        <div class="scBlog__dateDay">@blog.BlogDetailDate.ToString("dd")</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </a>
-    <div class="scBlog__footer">
-        <div class="scBlog__meta">
-            <a href="#"><span>0 Comments</span></a>
+        </a>
+        <div class="scBlog__footer">
+            <div class="scBlog__meta">
+                <!-- TO DO IMPLEMENT COMMENTS-->
+                <a href="#"><span>0 Comments</span></a>
+            </div>
         </div>
     </div>
-</div>
-    tags.AddRange(blog.Category.Select(tag => tag.CategoryName));
 }
 
 
@@ -195,7 +200,7 @@
         <ul>
             @foreach (var tag in tags)
             {
-                <li class="scBlogTag1"><a href="#">@tag</a></li>
+                <li class="scBlogTag1"><a href="@Model.LinkManager.GetItemUrl(tag.Id)">@Html.Raw(tag.CategoryName)</a></li>
             }
 
         </ul>

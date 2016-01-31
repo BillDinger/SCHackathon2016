@@ -1,15 +1,18 @@
 ﻿namespace Sitecore.Feature.Blog.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
     using Sitecore.Feature.Blog.CMS;
     using Sitecore.Feature.Blog.CMS.Contexts;
     using Sitecore.Feature.Blog.CMS.Log;
+    using Sitecore.Feature.Blog.CMS.Managers;
     using Sitecore.Feature.Blog.Domain.Repositories;
     using Sitecore.Feature.Blog.Domain.Templates;
     using Sitecore.Feature.Blog.Factories;
     using Sitecore.Feature.Blog.Factories.Exceptions;
+    using Sitecore.Feature.Blog.Models;
 
     public class BlogController : Controller
     {
@@ -24,6 +27,8 @@
             BlogFactory = blogFactory;
         }
 
+        private ILinkManager LinkManager { get; }
+
         private IContext Context { get; }
 
         private IRenderingContext RenderingContext { get; }
@@ -36,6 +41,7 @@
 
         public BlogController()
         {
+
             if (BlogFactory == null)
             {
                 throw new ContainerNotFoundException("No di container was found, unable to start the controller!");
@@ -45,6 +51,7 @@
             Logger = BlogFactory.Create<ILogger>();
             Repository = BlogFactory.Create<IBlogRepository>();
             ItemsToDisplay = BlogFactory.Create<ISitecoreConfiguration>().GetMaxNumberOfItemsToDisplay;
+            LinkManager = BlogFactory.Create<ILinkManager>();
         }
 
 
@@ -55,8 +62,7 @@
             if (listing == null)
             {
                 Logger.Debug("No listings found, returning empty list.", this);
-                return View("BlogListing", Enumerable.Empty<IBlogDetail>().ToList());
-
+                return View("BlogListing", new BlogListingModel(LinkManager, new List<IBlogDetail>(), null));
             }
 
             // 2.) get our rendering parameters
@@ -67,12 +73,11 @@
                 returnCount = parameters.ItemsToDisplay;
             }
 
-
             // 3.) query for our items.
             var items = Repository.GetBlogDetails(returnCount, listing.DisplayedCategories, listing.StartItem);
 
             // 4.) Return our view
-            return View("BlogListing", items);
+            return View("BlogListing", new BlogListingModel(LinkManager, items, listing));
         }
 
         public ActionResult BlogDetail()
@@ -94,7 +99,7 @@
             // call our analytics service for our ranked item.
             var result = Repository.GetBlogDetailsByScore(ItemsToDisplay);
 
-            return View("BlogListing", result);
+            return View("BlogListing", new BlogListingModel(LinkManager, result, null));
         }
     }
 }
