@@ -8,6 +8,15 @@
 
     public class DefaultLinkManager : ILinkManager
     {
+        public DefaultLinkManager(IContext context)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+            Context = context;
+        }
+
         private IContext Context { get; }
 
         public string GetItemUrl(Guid itemId)
